@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NHF Regelverk – Hesteskokasting</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f4ef;
+    --surface: #ffffff;
+    --surface2: #f0ece4;
+    --accent: #2d5a27;
+    --accent2: #4a8f41;
+    --accent-light: #e8f2e6;
+    --text: #1a1a18;
+    --text2: #4a4a45;
+    --text3: #7a7a72;
+    --border: #d8d2c6;
+    --border2: #e8e2d8;
+    --gold: #8b6914;
+    --gold-light: #f5edd8;
+    --red: #8b2020;
+    --red-light: #fdf0f0;
+    --blue: #1a3a5c;
+    --blue-light: #eaf2fb;
+    --shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.04);
+    --shadow-lg: 0 4px 24px rgba(0,0,0,.10);
+    --radius: 10px;
+    --sidebar: 280px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16180f;
+      --surface: #1e2217;
+      --surface2: #262b1c;
+      --accent: #7ecb73;
+      --accent2: #5fa854;
+      --accent-light: #1c2e1a;
+      --text: #e8e4d8;
+      --text2: #a8a89a;
+      --text3: #686860;
+      --border: #363824;
+      --border2: #2e3020;
+      --gold: #c8a84a;
+      --gold-light: #2a2410;
+      --red: #e06060;
+      --red-light: #2a1010;
+      --blue: #6ab0e8;
+      --blue-light: #0e1e2e;
+      --shadow: 0 1px 3px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.2);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Source Sans 3', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+
+  /* === HEADER === */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
+    padding: 0 1.5rem;
+  }
+  .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 1rem; height: 58px; }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; font-size: 1.25rem;
+    color: var(--accent); white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .logo span { color: var(--text2); font-weight: 400; font-size: .9rem; margin-left: .4rem; }
+  .search-wrap { flex: 1; max-width: 520px; position: relative; }
+  .search-wrap input {
+    width: 100%; padding: .5rem .9rem .5rem 2.4rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface2);
+    color: var(--text); font-size: .9rem; font-family: inherit;
+    outline: none; transition: border .15s, box-shadow .15s;
+  }
+  .search-wrap input:focus { border-color: var(--accent2); box-shadow: 0 0 0 3px rgba(74,143,65,.15); }
+  .search-wrap input::placeholder { color: var(--text3); }
+  .search-icon { position: absolute; left: .7rem; top: 50%; transform: translateY(-50%); color: var(--text3); font-size: .95rem; pointer-events:none; }
+  .menu-btn { display: none; background: none; border: none; color: var(--text2); font-size: 1.4rem; cursor: pointer; padding: .3rem; margin-left: auto; }
+  @media(max-width:768px) { .menu-btn { display: block; } }
+
+  /* === LAYOUT === */
+  .layout { max-width: 1200px; margin: 0 auto; display: flex; gap: 0; }
+
+  /* === SIDEBAR === */
+  aside {
+    width: var(--sidebar); flex-shrink: 0;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    height: calc(100vh - 58px);
+    position: sticky; top: 58px;
+    overflow-y: auto; overflow-x: hidden;
+    padding: 1rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  aside::-webkit-scrollbar { width: 4px; }
+  aside::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  .chapter-group { border-bottom: 1px solid var(--border2); }
+  .chapter-btn {
+    width: 100%; display: flex; align-items: center; gap: .6rem;
+    padding: .65rem 1.1rem;
+    background: none; border: none; cursor: pointer;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: .82rem; font-weight: 600; letter-spacing: .03em;
+    color: var(--text2); text-align: left; text-transform: uppercase;
+    transition: background .12s, color .12s;
+  }
+  .chapter-btn:hover { background: var(--accent-light); color: var(--accent); }
+  .chapter-btn.active { color: var(--accent); }
+  .chapter-num { display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 50%; background: var(--border2);
+    font-size: .72rem; font-weight: 600; color: var(--text3); flex-shrink: 0; }
+  .chapter-btn.active .chapter-num { background: var(--accent); color: #fff; }
+  .chevron { margin-left: auto; font-size: .7rem; color: var(--text3); transition: transform .2s; }
+  .chapter-btn.open .chevron { transform: rotate(90deg); }
+  .rule-list { display: none; }
+  .rule-list.open { display: block; }
+  .rule-link {
+    display: block; padding: .45rem 1.1rem .45rem 2.7rem;
+    font-size: .84rem; color: var(--text2); text-decoration: none;
+    border-left: 2px solid transparent; margin-left: .4rem;
+    transition: all .12s;
+  }
+  .rule-link:hover { color: var(--accent); background: var(--accent-light); }
+  .rule-link.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-light); font-weight: 600; }
+
+  @media(max-width:768px) {
+    aside { display: none; width: 100%; height: auto; position: fixed; top: 58px; left: 0; right: 0; z-index: 90; border-right: none; border-bottom: 1px solid var(--border); max-height: 60vh; }
+    aside.open { display: block; }
+  }
+
+  /* === MAIN CONTENT === */
+  main { flex: 1; min-width: 0; padding: 2rem 2.5rem; max-width: 820px; }
+  @media(max-width:1024px) { main { padding: 1.5rem 1.5rem; } }
+  @media(max-width:768px) { main { padding: 1rem; } }
+
+  /* Intro card */
+  .intro-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem;
+    margin-bottom: 2rem; box-shadow: var(--shadow);
+  }
+  .intro-card h1 { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--text); margin-bottom: .4rem; }
+  .intro-card p { color: var(--text2); font-size: .9rem; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+  .badge { display: inline-flex; align-items: center; gap: .35rem; padding: .28rem .7rem; border-radius: 20px; font-size: .78rem; font-weight: 600; }
+  .badge.green { background: var(--accent-light); color: var(--accent); }
+  .badge.gold { background: var(--gold-light); color: var(--gold); }
+  .badge.blue { background: var(--blue-light); color: var(--blue); }
+
+  /* Chapter section */
+  .chapter-section { margin-bottom: 2.5rem; }
+  .chapter-header {
+    display: flex; align-items: baseline; gap: .8rem;
+    padding: .6rem 1rem; margin-bottom: 1.2rem;
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    box-shadow: var(--shadow);
+  }
+  .chapter-label { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--text3); white-space: nowrap; }
+  .chapter-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--text); }
+
+  /* Rule card */
+  .rule-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: box-shadow .15s;
+  }
+  .rule-card:hover { box-shadow: var(--shadow-lg); }
+  .rule-header {
+    display: flex; align-items: center; gap: .8rem;
+    padding: .8rem 1.1rem;
+    cursor: pointer; user-select: none;
+    border-bottom: 1px solid transparent;
+    transition: background .12s;
+  }
+  .rule-header:hover { background: var(--surface2); }
+  .rule-header.expanded { border-bottom-color: var(--border2); background: var(--surface2); }
+  .rule-num {
+    flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+    min-width: 36px; height: 28px; padding: 0 .5rem;
+    background: var(--accent-light); color: var(--accent);
+    border-radius: 6px; font-size: .78rem; font-weight: 700; font-family: monospace;
+  }
+  .rule-title { font-weight: 600; font-size: .95rem; flex: 1; }
+  .rule-tag { font-size: .72rem; padding: .2rem .55rem; border-radius: 12px; font-weight: 600; }
+  .tag-bor { background: var(--should-note, #fff8e6); color: var(--gold); border: 1px solid var(--gold-light); }
+  .tag-bor::before { content: '⚠ '; }
+  .rule-chevron { color: var(--text3); font-size: .75rem; flex-shrink: 0; transition: transform .2s; }
+  .rule-header.expanded .rule-chevron { transform: rotate(90deg); }
+  .rule-body { padding: 1rem 1.1rem; display: none; }
+  .rule-body.open { display: block; }
+  .rule-body p, .rule-body li { font-size: .9rem; color: var(--text2); margin-bottom: .5rem; }
+  .rule-body ol, .rule-body ul { padding-left: 1.4rem; }
+  .rule-body li { margin-bottom: .35rem; }
+  .rule-body strong { color: var(--text); font-weight: 600; }
+  .rule-body .sub { margin-top: .5rem; margin-left: 1rem; padding-left: 1rem; border-left: 2px solid var(--border2); }
+  .bor-note {
+    background: var(--gold-light); border: 1px solid #dab96a; border-radius: 8px;
+    padding: .6rem .9rem; font-size: .82rem; color: var(--gold);
+    margin-top: .8rem; display: flex; gap: .5rem;
+  }
+  .bor-note strong { color: var(--gold); }
+
+  /* Search results */
+  #search-results { display: none; }
+  #search-results.visible { display: block; }
+  .results-header { font-size: .8rem; color: var(--text3); margin-bottom: 1rem; }
+  .result-item {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: .9rem 1.1rem;
+    margin-bottom: .75rem; cursor: pointer; box-shadow: var(--shadow);
+    transition: box-shadow .12s, border-color .12s;
+  }
+  .result-item:hover { box-shadow: var(--shadow-lg); border-color: var(--accent2); }
+  .result-rule { font-size: .72rem; color: var(--accent); font-weight: 700; margin-bottom: .25rem; }
+  .result-title { font-weight: 600; font-size: .95rem; margin-bottom: .2rem; }
+  .result-excerpt { font-size: .83rem; color: var(--text2); }
+  mark { background: #fff3a0; color: var(--text); border-radius: 2px; padding: 0 2px; }
+  @media(prefers-color-scheme:dark) { mark { background: #4a3a00; } }
+
+  /* No results */
+  .no-results { text-align: center; padding: 3rem 1rem; color: var(--text3); }
+
+  /* Jump to top */
+  .back-to-top {
+    display: none; position: fixed; bottom: 1.5rem; right: 1.5rem;
+    width: 40px; height: 40px; background: var(--accent); color: #fff;
+    border: none; border-radius: 50%; font-size: 1.1rem; cursor: pointer;
+    box-shadow: var(--shadow-lg); transition: opacity .2s;
+    align-items: center; justify-content: center;
+  }
+  .back-to-top.visible { display: flex; }
+
+  /* Responsive rule headers */
+  @media(max-width:480px) {
+    .rule-tag { display: none; }
+    .chapter-title { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">NHF<span>Regelverk</span></div>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-input" placeholder="Søk i regler og kapitler…" autocomplete="off" spellcheck="false">
+    </div>
+    <button class="menu-btn" id="menu-btn" aria-label="Vis meny">☰</button>
+  </div>
+</header>
+
+<div class="layout">
+
+<aside id="sidebar">
+  <!-- generated by JS -->
+</aside>
+
+<main id="main-content">
+
+  <div class="intro-card">
+    <h1>Regelverk for hesteskokasting</h1>
+    <p>Norges Hesteskokasterforbund (NHF) – Offisielt regelverk. Bruk søkefeltet eller navigasjonsmenyen for å finne frem til spesifikke regler.</p>
+    <div class="badge-row">
+      <span class="badge green">✦ 10 Kapitler</span>
+      <span class="badge gold">⚠ Merk «bør»-regler</span>
+      <span class="badge blue">☰ Mobilvennlig</span>
+    </div>
+  </div>
+
+  <div id="content-area"><!-- chapters rendered here --></div>
+  <div id="search-results"></div>
+
+</main>
+</div>
+
+<button class="back-to-top" id="back-top" aria-label="Til toppen">↑</button>
+
+<script>
+const RULES = [
+  {
+    id: "kap1",
+    chapter: "Kapittel 1",
+    title: "Innleiing, utstyr, bane, avvikling, organisering",
+    rules: [
+      { id:"r01", num:"01", title:"Metodar", bor:false, body:`
+        <p><strong>A: Tradisjonelle metodar</strong> (mann mot mann): Seriemetoden (regel 40), Gloppen-metoden (regel 41), Dobbel Gloppen-metode (regel 42), Nordhordlandsmetoden (regel 47) og Cup-metoden (regel 45). Kastarane får skårpoeng etter regel 21 og kamppoeng etter regel 22.</p>
+        <p><strong>B: Andre metodar:</strong> X-kast (regel 43) og Kongelag. Kastarane får poeng etter avstanden frå stikka (regel 23). Dessutan er det hesteskogolf (regel 46).</p>
+      `},
+      { id:"r02", num:"02", title:"Generelt om avviklingsform", bor:false, body:`
+        <p>Konkurransar blir i dei fleste tilfelle avvikla i to avdelingar: <strong>innleiande kasting</strong> og <strong>avsluttande kasting</strong>, der innleiande kasting er kvalifisering til den avsluttande. Unntak: reine X-kast- og kongelagskonkurransar, og hesteskogolf.</p>
+      `},
+      { id:"r03", num:"03", title:"Singelkasting, parkasting og lagkasting", bor:false, body:`
+        <p>I tillegg til singelkasting blir det avvikla konkurransar i <strong>parkasting</strong> (regel 11.5) og <strong>lag</strong> (regel 51).</p>
+        <p>«Deltakar» tyder: personen i singelkasting, paret i parkasting og laget i lagkonkurransar.</p>
+      `},
+      { id:"r10", num:"10", title:"Utstyr og bane", bor:false, body:`
+        <ol>
+          <li>Hestesko skal ha tradisjonell norsk form, tilnærma oval. Maksimumsmål: <strong>vekt 615 g, breidd 140 mm, lengd 155 mm, opning 80 mm, grev inkl. gods 35 mm</strong>. Alle utradisjonelle tilleggsdelar er forbodne. Skotypen skal vera tilgjengeleg for kastarar flest.</li>
+          <li>Kvar deltakar nyttar <strong>2 sko</strong> ved tradisjonelle metodar, og <strong>4 sko</strong> ved andre metodar. Alle skorne skal kastast etter kvarandre.</li>
+          <li>Flat bane mot jarnstikke, diameter 18–22 mm, høgd 22–30 cm over bakken. Avstand mellom stikkene: <strong>10 m</strong> (toleranse ±5 cm). Område med radius min. 1 m rundt kvar stikke skal vera grus/sand.</li>
+        </ol>
+      `},
+      { id:"r11", num:"11", title:"Generelle bestemmelsar", bor:true, body:`
+        <ol>
+          <li>Kast skal utførast frå kaststikke. Fremste tåspiss må vera inntil <strong>20 cm frå stikka</strong>.</li>
+          <li>Deltakarane må ikkje forstyrre kvarandre under kasting, og ikkje snakke over bana. Andre kastarar skal stå med god avstand bak den aktive kastaren og vera stille.</li>
+          <li>Arrangøren avgjer avviklingsmetode – kan varierast frå klasse til klasse. Avviklingsmetode for NM og nasjonale NC-stemner skal godkjennast av NHF.</li>
+          <li>Kastarane skal bytast om å kaste som nr. 1 og 2 (og 3). Feil rekkefølge rettast opp ved neste stikke. <em>(tradisjonell)</em></li>
+          <li>Ved parkasting: ein kastar frå kvart par ved kvar stikke. Kastarane kan ikkje pendle mellom stikkene. Same skor for paret. <em>(tradisjonell)</em></li>
+          <li>I singelkasting kan 2–3 personar stå ved same stikke og kaste mot kvarandre. Pendling er tillate, men ikkje før alle sko er kasta. <em>(tradisjonell)</em></li>
+          <li>Deltakarar som ikkje kvalifiserer til avsluttande kasting rangerast etter kamppoeng; ved likt, etter skår (GM). Ved X-kast som innleiande kasting, rangerast etter poeng.</li>
+          <li>Antal kastrunder kan varierast. Totalt maksimum per konkurranse: 1-dagsstemne 18 rundar (2 pr. bane) / 14 rundar (3 pr. bane); 2-dagsstemne 32 / 25 rundar. <em>(tradisjonell)</em></li>
+          <li>Ved avsluttande kasting etter Cup (regel 45) skal seeding nyttast i 1. og 2. cuprunde. Deltakarane delast i 3 puljar A, B, C. <em>Sjå regel 45 for detaljar.</em></li>
+          <li>Kastar ein mot feil stikke skal det kastast på nytt.</li>
+        </ol>
+        <div class="bor-note"><span>⚠</span><div><strong>«Bør»-merknad:</strong> Regel 11.8 brukar «bør» om maksimalt antal deltakarar i gruppe B. Dette inneber tilråding, ikkje absolutt krav.</div></div>
+      `},
+      { id:"r12", num:"12", title:"Stemneavvikling – terminfesta stemne", bor:true, body:`
+        <ol>
+          <li>I parkast bør paret som hovudregel vera frå same klubb. Unntak kan godkjennast skriftleg av respektive klubbar, eller i spesielle høve av juryen.</li>
+          <li>Terminfesta stemner skal avviklast med: <strong>A</strong> – innleiande kasting (seriemetoden, Gloppen, X-kast eller NHM); <strong>B</strong> – evt. mellomrunde (Dobbel Gloppen); <strong>C</strong> – avsluttande kasting (Kongelag, Cup eller NHM). NM og nasjonale NC-stemner skal alltid ha minst eit element av tradisjonell metode.</li>
+          <li>Flest mogleg deltakarar bør gå vidare til avsluttande kasting. Av dei som deltar i avsluttande kasting skal min. 50 % og maks. 75 % gå til A-gruppa.</li>
+          <li>I terminfesta stemne kan inntil 3 best rangerte deltakarar per gruppe få «walk over» i 1. cuprunde. Krev minimum 8 deltakarar i kvar gruppe. Juryen avgjer.</li>
+        </ol>
+        <div class="bor-note"><span>⚠</span><div><strong>«Bør»-merknad:</strong> Regel 12.3 brukar «bør» – inneber tilråding om A/B-gruppe-inndeling, særleg ved 14 eller færre deltakarar i ei klasse.</div></div>
+      `},
+      { id:"r13", num:"13", title:"Organisering av hesteskokonkurranse", bor:false, body:`
+        <ol>
+          <li>Alle terminfesta stemner skal ha ein <strong>stemneleiar</strong> med ansvar for banestand, informasjon (kastnøklar, startlister) og sekretariat.</li>
+          <li>Det skal oppnemnast ein <strong>stemnejury</strong>: A – Leiar (NHF), B – Stemneleiar, C – Kastar (ikkje frå arrangørklubb). Juryen er høgste myndigheit og avgjerder er endelege.</li>
+          <li>Juryen sine oppgåver inkluderer: godkjenne bane og cuprunder, ta avgjerder i tvilstilfelle, handsame protestar, bestemme antal kastrundar, evt. diskvalifisere (sjå kap. 7).</li>
+          <li>Protestar skal leverast snarast, seinast <strong>15 min. etter at resultata er kunngjort</strong>. Ved klare arrangørfeil er ikkje fristen tidsavgrensa.</li>
+        </ol>
+      `},
+    ]
+  },
+  {
+    id: "kap2",
+    chapter: "Kapittel 2",
+    title: "Døming og poenggjeving",
+    rules: [
+      { id:"r20", num:"20", title:"Døming – generelt", bor:false, body:`
+        <ol>
+          <li>Arrangøren kan pålegge kastarane å dømme og notere poeng. I terminfesta stemner skal det vera banedomarar i finalane i A-gruppa.</li>
+          <li>Kastarar under 15 år kan ved sjølvdømming ha med ein representant.</li>
+          <li>Usemje om skårpoeng avgjerast av juryen eller ein erfaren kastar.</li>
+          <li>Vert ein sko knust kan ein ny kastast. Kasting med feil sko kastast på nytt (om ikkje deltakarane er einige om å akseptere resultatet).</li>
+          <li>Kastarane skal ikkje ta opp skorne før fordelinga av skårpoeng er fastsett. Vert ein poenggivande sko flytta av tredje person – kast på nytt. Vert skoen flytta av eigen deltakar – ingen poeng for den deltakaren.</li>
+        </ol>
+      `},
+      { id:"r21", num:"21", title:"Skårpoeng (tradisjonell)", bor:false, body:`
+        <ol>
+          <li>Alle sko som ligg rundt stikka (<strong>ring</strong>) gjev <strong>3 skårpoeng</strong>. Ein skal kunne trekke ei rett linje mellom endane på skoen – linja kan tangere stikka.</li>
+          <li>Ingen ring: den næraste skoen gjev <strong>1 skårpoeng</strong>.</li>
+          <li>Umuleg å skilje næraste sko: neste beste tel. Er det også uavgjort, får kvar kastar 1 skårpoeng.</li>
+          <li>Har ein deltakar 2 sko med høgare verdi enn beste sko til motstandar, gjev begge skårpoeng.</li>
+          <li>Den som fyrst når <strong>21 skårpoeng</strong> (utgang) eller meir har vunne. Likt på 21+ = uavgjort.</li>
+          <li>I finalen kan juryen auke utgangen til <strong>30 skårpoeng</strong>.</li>
+        </ol>
+      `},
+      { id:"r22", num:"22", title:"Kamppoeng og rangering (tradisjonell)", bor:false, body:`
+        <ol>
+          <li>To pr. bane: Vinnar: 2 KP. Tapar med ≥11 i skår: 1 KP. Tapar med &lt;11: 0 KP. Uavgjort: 1,5 KP kvar.</li>
+          <li>Tre pr. bane: 1. plass 2 KP, 2. plass 1 KP, 3. plass 0 KP. Ved lik skår delast poenga.</li>
+          <li>Rangering etter innleiande kasting: kamppoeng, deretter eigenskår, deretter innbyrdes oppgjør.</li>
+          <li>W.O. gjev 2 kamppoeng og 21 skårpoeng. I lagkonkurransar: gjennomsnittet av KP og skår.</li>
+        </ol>
+      `},
+      { id:"r23", num:"23", title:"Poenggjeving (andre metodar)", bor:false, body:`
+        <p>Alle skor per omgang tel. Poengskala:</p>
+        <ul>
+          <li><strong>Ring</strong> (jf. regel 21.1) = <strong>5 poeng</strong></li>
+          <li>0–5 cm frå stikka = <strong>3 poeng</strong></li>
+          <li>5–20 cm frå stikka = <strong>2 poeng</strong></li>
+          <li>20–50 cm frå stikka = <strong>1 poeng</strong></li>
+        </ul>
+        <p>Avstanden målast frå stikka til næraste punkt på skoen.</p>
+      `},
+    ]
+  },
+  {
+    id: "kap3",
+    chapter: "Kapittel 3",
+    title: "Klassar",
+    rules: [
+      { id:"r30", num:"30", title:"Klassar og definisjonar", bor:true, body:`
+        <ol>
+          <li>Ein konkurranse <em>kan</em> ha: Klasse 1, Klasse 2, Juniorklasse. I hesteskogolf <em>skal</em> det vera dame- og herreklasse.</li>
+          <li><strong>Klasse 1:</strong> Open for damer og herrar. <strong>Klasse 2:</strong> For nybyrjarar/andre som ikkje er kvalifisert for kl. 1. <strong>Juniorklasse:</strong> Kastarar under 14 år.</li>
+          <li>Kastarar i kl. 2 og junior kan delta i høgare klasse, men kan ikkje gå tilbake i same sesong utan godkjenning frå NHF.</li>
+          <li>Norgesmeistrar kårast berre i A-gruppene. Det skal ikkje kårast NM i kl. 2 og juniorklassa.</li>
+          <li>Distriktsmeistrar kårast i kl. 1 og kl. 2.</li>
+          <li>Juryen kan senkje utgangen til min. 15 SP i kl. 2. I juniorklassa kan kastavstanden vera under 10 m og utgangen setjast lågare enn 21 SP.</li>
+          <li>Juryen kan bestemme at kl. 2-kastarar kastar saman med kl. 1-kastarar. Dei får då ein bonusskår på 8 SP mot kl. 1 (innleiande kasting). Under avsluttande kasting gjeld ikkje bonusen.</li>
+        </ol>
+        <div class="bor-note"><span>⚠</span><div><strong>«Bør»-merknad:</strong> Regel 30.1 brukar «kan» om klasser – arrangøren er ikkje forplikta til å ha alle klasser.</div></div>
+      `},
+    ]
+  },
+  {
+    id: "kap4",
+    chapter: "Kapittel 4",
+    title: "Metodar for avvikling av stemner",
+    rules: [
+      { id:"r40", num:"40", title:"Seriemetoden (innleiande kasting)", bor:false, body:`
+        <ol>
+          <li>Deltakarane trekkast i seriar på inntil 14 deltakarar.</li>
+          <li>Ved stor deltaking kan ein dele i 2+ puljar med ulik starttid.</li>
+          <li>Alle i ein serie kastar mot alle andre, to og to.</li>
+          <li>Ved forfall fyller ein opp med etteranmelde, deretter deltakarar frå siste serie.</li>
+        </ol>
+      `},
+      { id:"r41", num:"41", title:"Gloppen-metoden (innleiande kasting)", bor:false, body:`
+        <ol>
+          <li>Deltakarane får fortløpande startnummer etter påmelding eller ved trekning.</li>
+          <li>Arrangøren avgjer 2 eller 3 deltakarar pr. bane. Banefordelinga trekkast, eller NHFs ferdigtrekte kastnøklar nyttast.</li>
+          <li>Kasting til fyrste deltakar når 21 SP (utgang) eller meir. Kampen er då slutt.</li>
+          <li>Kastarane fører eige startkort. Motstandarane kontrollerer og kvitterer.</li>
+        </ol>
+      `},
+      { id:"r42", num:"42", title:"Dobbel Gloppen-metode (mellomrunde)", bor:true, body:`
+        <ol>
+          <li>Gloppen-metoden nyttast i tillegg som mellomrunde.</li>
+          <li>Etter innleiande kasting går deltakarane til mellomrunde, fordelt i A- og B-gruppe (jf. regel 12.3).</li>
+          <li>Deltakarane tek med halvparten av kamppoeng og totalskår frå innleiande kasting (desimalar i skår strykast).</li>
+          <li>Antal deltakarar pr. bane kan variere mellom rundar. Antal kastrunder i innleiande og mellomrunde <em>bør</em> vera mest mogleg like.</li>
+        </ol>
+        <div class="bor-note"><span>⚠</span><div><strong>«Bør»-merknad:</strong> Regel 42.4 – antal kastrunder i innleiande og mellomrunde bør vera mest mogleg like, men er inga absolutt plikt.</div></div>
+      `},
+      { id:"r43", num:"43", title:"X-kast (kombinert metode)", bor:false, body:`
+        <p><strong>Definisjonar:</strong></p>
+        <ul>
+          <li><strong>Omgang:</strong> 4 kast etter kvarandre.</li>
+          <li><strong>Runde:</strong> 5 omgangar etter kvarandre.</li>
+          <li><strong>Rotasjon:</strong> Alle deltakarar i ein serie har kasta ei runde.</li>
+        </ul>
+        <ol>
+          <li>X-kast: Heilmatch = 10 runder, Halvmatch = 5 runder, Minimatch = 3 runder.</li>
+          <li>Ein serie: 2–4 deltakarar.</li>
+          <li>Kvar deltakar har rett på maks. 4 prøvekast før kvar runde.</li>
+          <li>Dei andre i serien fastset, kontrollerer og noterer poeng.</li>
+          <li>Regel 43.6 om baneforflytting og finalekasting vart oppheva i 2021.</li>
+          <li>Likt poeng: den med flest ringar går føre; er det likt, tel beste enkeltrunderesultat, osv.</li>
+          <li>Det skal kastast fram og tilbake. Antal ringar registrerast (jf. regel 48, NR).</li>
+        </ol>
+      `},
+      { id:"r44", num:"44", title:"Kongelagsmetoden (avsluttande kasting)", bor:true, body:`
+        <ol>
+          <li>4 sko per deltakar, kastast etter kvarandre.</li>
+          <li>Ein deltakar per bane.</li>
+          <li>Det bør ikkje vera meir enn 12 deltakarar per kongelag. Juryen bestemmer tal kastarar og kongelag.</li>
+          <li>Juryen avgjer om det skal vera cuprunder før kongelagskasting.</li>
+          <li>10 kastomgangar. Rotasjon kan leggast inn etter 5., 7. og 9. omgang.</li>
+          <li>Poengstillinga skal opplysast etter min. 5., 7. og 9. omgang.</li>
+          <li>Domarar fastset poengverdi. Kamppoeng frå innleiande kasting leggast til.</li>
+          <li>Likt poeng: best kongelagsresultat avgjer; er det likt, tel flest ringar; er det framleis likt, tel beste enkeltomgangsresultat osv.</li>
+          <li>X-kast som innleiande kasting: Minimatch 33,33 %, Halvmatch 20 %, Heilmatch 10 % av poenga leggast til.</li>
+        </ol>
+        <p><strong>NM-Kongelag:</strong> Tilfeldig startnummer. Topp 12 etter alle kongelag går til eit nytt kongelag. Vinnaren er den med høgast poengsum samla.</p>
+        <div class="bor-note"><span>⚠</span><div><strong>«Bør»-merknad:</strong> Regel 44.3 – bør ikkje vera meir enn 12 deltakarar per kongelag (tilråding, ikkje krav).</div></div>
+      `},
+      { id:"r45", num:"45", title:"Cup (avsluttande kasting)", bor:false, body:`
+        <ol>
+          <li>2 eller 3 deltakarar per bane. Taparen går ut.</li>
+          <li>Kasting til 2 deltakarar i finale. Tapande i semifinalane kastar om plassane etter finalistane.</li>
+          <li>Berre éin deltakar vert utslegen per kamp.</li>
+          <li>Arrangøren kan arrangere finalen som best av inntil 3 kampar.</li>
+          <li>Må vinne med <strong>minimum 2 skårpoeng</strong>. Med 3 deltakarar: den to som passerer 21 SP med ≥2 SP til nr. 3 går vidare; dei to siste kastar til éin når 21 SP med ≥2 SP til den andre.</li>
+          <li>Utslegne deltakarar før semifinalane rangerast etter KP og skår frå innleiande kasting.</li>
+        </ol>
+      `},
+      { id:"r46", num:"46", title:"Hesteskogolf", bor:true, body:`
+        <ol>
+          <li>Løype i variert terreng/grusbane med kaststikker i bestemt rekkefølge. Variert avstand og hinder mellom UP og stikke.</li>
+          <li>Fyrste kast mot ei stikke (utgangskastet) frå utgangspunktet (UP). Der skoen ligg, utførast neste kast.</li>
+          <li>Kast mot same stikke til «ring» er oppnådd (jf. regel 21.1).</li>
+          <li>Eit på førehand bestemt antal runder. Færrast kast totalt = vinnaren.</li>
+          <li>Delt plass: best enkeltrunde avgjer; elles nest beste osv. Delt 1.–3. plass løysast med flest ringar på 1. kast, deretter omkast på 3 stikker (juryen avgjer kva stikker).</li>
+          <li>Antal runder: 2–4. Antal stikker: 9–18. Avstand UP til stikke: 5–25 m. Norsk standard sko og stikke.</li>
+          <li>3–4 kastarar går saman og dømmer for kvarandre. Kroppsrotasjon er forbode.</li>
+          <li>I NM skal det kastast mot minimum 36 stikker.</li>
+        </ol>
+        <div class="bor-note"><span>⚠</span><div><strong>«Bør»-merknad:</strong> Regel 46.7 – området rundt stikkene bør vera tilnærma flatt.</div></div>
+      `},
+      { id:"r47", num:"47", title:"Nordhordlandsmetoden – NHM (kombinert metode)", bor:true, body:`
+        <ol>
+          <li>2 deltakarar per bane. Startlistene trekkast. Startkort utleverast ikkje før startlistene er klare.</li>
+          <li>SN 1 møter SN 2 på bane 1, SN 3 møter SN 4 på bane 2, osv. Oddetal deltakarar: høgast SN får w.o. i 1. runde.</li>
+          <li>Poengberekning som i regel 22.1. W.o.-poeng som i regel 22.4.</li>
+          <li>Antal runder: maks. 10, min. 5. Det bør avviklast minst nok rundar til at det teoretisk berre kan vera éin deltakar med full poengpott.</li>
+          <li>Startkort leveras ferdig utfylt etter kvar runde til sekretariatet.</li>
+          <li>I påfølgande rundar: best rangerte kastar på bane 1 mot nestbest, osv. Ingen deltakar kan ha meir enn 1 w.o. per konkurranse.</li>
+          <li>Ingen deltakarar kan møtast meir enn éin gong per konkurranse.</li>
+          <li>Sluttrangering etter regel 22.3.</li>
+        </ol>
+        <p><strong>Avsluttande kasting etter NHM:</strong> Seeding i første runde; best rangerte mot lågaste rangerte.</p>
+        <div class="bor-note"><span>⚠</span><div><strong>«Bør»-merknad:</strong> Regel 47.4 – antal rundar bør vera nok til at berre éin kan ha full poengpott.</div></div>
+      `},
+      { id:"r48", num:"48", title:"Norgesranking (NR)", bor:false, body:`
+        <ol>
+          <li>Årleg rangering i prosent ringar i godkjende NR-stemner/rankingrunder.</li>
+          <li>Kan arrangerast lokalt i klubbane eller i samband med terminfesta stemner.</li>
+          <li>Lokale NR-stemner: arrangøren melder seinast dagen før til NHF og NC-koordinator.</li>
+          <li>Ved lokale NR-stemner: 100 kast per rankingrunde (X-kast/Kongelag: slik det er bestemt for desse).</li>
+          <li>2–3 kastarar per bane. Kastarane byter på etter kvar 5. omgang.</li>
+          <li>4 sko, fram og tilbake (jf. regel 43.8).</li>
+          <li>Minimum <strong>6 kastarar</strong> per stemne for godkjent NR-resultat.</li>
+          <li>Styret fastset kor mange rankingrunder som er teljande i årsresultatet.</li>
+          <li>Dei tre beste årsresultata premierast av NHF – premiering på eit av dei fyrste NM/NC-stemna neste år.</li>
+          <li>Resultata sendast NHF v/ NC-koordinator. NC-koordinator kunngjér mellombels rankingliste kvar månad.</li>
+        </ol>
+      `},
+      { id:"r49", num:"49", title:"SNC i Norgescupen (rev1-2025)", bor:false, body:`
+        <p>SNC avviklast etter følgjande rammer:</p>
+        <ul>
+          <li>Terminfestast på NHF sin terminliste.</li>
+          <li>Skal setjast opp på ukedagar (ikkje helger). Unntak: NM X-kast og NM Kongelag.</li>
+          <li>Arrangørar: lokale klubbar eller NHF. Minimumskrav: <strong>6 kastarar</strong>.</li>
+          <li>Stemnestart mellom kl. 17 og 19. Same dato, same kastmetode.</li>
+          <li>Resultata rapporteras seinast kl. 18:00 påfølgande dag. Offisiell resultatliste kl. 20:00.</li>
+        </ul>
+        <p><strong>Kastemetodealternativ:</strong> 1) X-kast minimatch + kongelag, 2) X-kast halvmatch + kongelag, 3) X-kast heilmatch, 4) X-kast halvmatch + X-kast heilmatch.</p>
+        <p><strong>Premiering (NHF):</strong> Kl. 1: 1. plass 500 kr, 2. plass 300 kr, 3. plass 200 kr. Kl. 2: 1. plass 300 kr, 2. plass 200 kr. I tillegg trekk av pengepremiar à 200 kr til 10 % av deltakarar.</p>
+      `},
+    ]
+  },
+  {
+    id: "kap5",
+    chapter: "Kapittel 5",
+    title: "Reglar for Norges-cup singel og NM lag",
+    rules: [
+      { id:"r50", num:"50", title:"Norges-cup (NC)", bor:false, body:`
+        <ol>
+          <li>NC er ein årleg samanlagtkonkurranse singel. Beste plasseringar i på førehand bestemte NC-stemner tel.</li>
+          <li>Skifte mellom kl. 1 og kl. 2 i løpet av sesongen: NC-poeng i «gammal» klasse strykast.</li>
+          <li>Inntil 60 deltakarar i kvar klasse får NC-poeng per stemne.</li>
+          <li>Poengskala (nr. 1 = 400, nr. 2 = 380, ..., nr. 60 = 2). Distrikt-NC (DNC) gjev 50 % av skalaen.</li>
+          <li>Styret bestemmer antal NC- og DNC-stemner, og kor mange som tel i sluttsamandraget.</li>
+          <li>4 distrikt: I Sør-/Austlandet, II Sør-Vestlandet, III Nord-Vestlandet, IV Trøndelag/Nord-Noreg. Alle DNC-stemner er opne for kastarar frå alle distrikt.</li>
+          <li>Likt samanlagtpoeng: beste enkeltresultat avgjer; er likt, tel nestbeste, osv.</li>
+        </ol>
+      `},
+      { id:"r51", num:"51", title:"NM lag", bor:false, body:`
+        <ol>
+          <li>Innleiande kasting etter Gloppen-metoden. Avsluttande kasting etter utslagsprinsippet.</li>
+          <li>Seriar à 4 enkeltbaner (A, B, C, D). Kvart lag inntil 4 kastarar (rangert A–D).</li>
+          <li>Kastar A kastar på bane A, osv. Ikkje tillat å byte lag under konkurransen.</li>
+          <li>Innleiande kasting: 2–3 kastarar per enkeltbane. Rangering som i regel 22.3 (tilpassa lagkamp).</li>
+          <li>Avsluttande kasting: det laget med flest KP lagmessig går vidare. Likt KP: flest lagmessig SP avgjer. Likt SP: flest SP i enkeltkamp. Framleis likt: omkamp.</li>
+          <li>Omkamp: 3 kastarar, utgang 15 SP, kamp må vinnast med 2 SP.</li>
+        </ol>
+      `},
+    ]
+  },
+  {
+    id: "kap6",
+    chapter: "Kapittel 6",
+    title: "Avgifter og gebyr",
+    rules: [
+      { id:"r60", num:"60", title:"Avgifter", bor:false, body:`
+        <ol>
+          <li>Stemneavgift til NHF per påmeldt kastar betales av arrangørklubben. Ingen stemneavgift for kl. 2, juniorklassa og lokale klubbkonkurransar. Betales innan 1 månad etter konkurransen.</li>
+          <li>Startkontingent fastsetjast av årsmøtet for dei komande 2 åra.</li>
+          <li>Medlemskontingent fastsetjast av årsmøtet for 2 år. Betales innan 1. mai. Purregebyr: 100 kr etter fristen.</li>
+          <li>Tilleggsavgift i startkontingenten for NC-stemner fastsetjast av årsmøtet. Betales innan 1 månad etter konkurransen.</li>
+          <li>Gebyr for etterpåmelding fastsetjast av årsmøtet.</li>
+        </ol>
+      `},
+    ]
+  },
+  {
+    id: "kap7",
+    chapter: "Kapittel 7",
+    title: "Framferd og straff",
+    rules: [
+      { id:"r70", num:"70", title:"Framferd og sanksjonar", bor:false, body:`
+        <ol>
+          <li>Forbode å nyte alkohol eller andre rusmiddel på stemneområdet under konkurranse.</li>
+          <li>Rusa personar og personar med uhøvisk åtferd kan visast bort frå stemneområdet.</li>
+          <li>Brot på reglar: deltakaren kan miste KP og SP. Fleire brot: juryen kan vise deltakaren bort frå bana. Gjeld også etter at deltakaren er ferdig med kasting.</li>
+          <li>Bevisst fusk: juryen skal diskvalifisere deltakaren. Diskvalifisert deltakar visast bort frå bana.</li>
+          <li>Juryen rapporterer til leiar av NHF. Styret i NHF har fullmakt til ytterlegare sanksjonar, også på eige initiativ.</li>
+          <li>Juryens vedtak kan ankast til styret i NHF. Sanksjonar frå styret kan ankast til lovutvalet.</li>
+        </ol>
+      `},
+    ]
+  },
+  {
+    id: "kap9",
+    chapter: "Kapittel 9",
+    title: "Andre bestemmelsar",
+    rules: [
+      { id:"r90", num:"90", title:"Handbok", bor:false, body:`
+        <p>NHF gjev ut handbok kvart år før sesongstart. Kvart medlemslag får tilsendt eit eksemplar. Handboka skal innehalde:</p>
+        <ul>
+          <li>Terminliste, vedtekter, konkurransereglement, medlemsliste.</li>
+          <li>Adresseliste for tillitsmenn, avgifter, materiell til sals.</li>
+          <li>Liste over NM-meistrar, NC-vinnarar og dei beste frå NM/NC/NR siste år.</li>
+          <li>Rekordar og Adelskalender X-kast og Kongelag.</li>
+        </ul>
+      `},
+      { id:"r91", num:"91", title:"Terminliste", bor:false, body:`
+        <ol>
+          <li>Styret tildeler NM og NC-stemner etter søknad. Distriktsmeisterskap tildelas etter søknad inntil vidare.</li>
+          <li>Søknad om NM/NC seinast den frist styret fastset. Søknaden skal innehalde: namn, tid, stemnetype, stad, kontaktperson.</li>
+          <li>Følgjande stemner skal arrangerast kvart år: NC, NM singel, NM par, NM mix-par, NM Hesteskogolf, NM X-kast (heilmatch), NM lag, NM Kongelag.</li>
+          <li>NM-deltakarar: må vera medlem av tilslutta klubb i min. 1 månad, eller busett i Noreg dei 3 siste månadene. Styret kan gjere unntak.</li>
+          <li>Terminlista skal vera utsendt til alle medlemsklubbane innan utgangen av mars.</li>
+        </ol>
+      `},
+      { id:"r92", num:"92", title:"Innbyding og påmelding", bor:false, body:`
+        <ol>
+          <li>Innbyding sendast skriftleg til alle lag. Påmeldingsfrist: ikkje tidlegare enn 14 dagar før konkurransen.</li>
+          <li>Innbydinga skal opplyse om: stemnetype/avviklingsmetode, tid/stad, frist for påmelding, frist for henting av startkort, reiserute/overnatting, eventuelle avvik frå regelverket.</li>
+          <li>Laga er ansvarlege for påmelding og betaling av startkontingent – også om påmelde ikkje møter.</li>
+          <li>Einskildpersonar betaler startkontingent ved påmelding. Vert ikkje registrert som deltakar før betalt.</li>
+          <li>Laga er ansvarlege for at deltakarane er påmelde i rett klasse.</li>
+        </ol>
+      `},
+      { id:"r93", num:"93", title:"Stemneinformasjon", bor:false, body:`
+        <p>Ved alle stemner skal det informerast om:</p>
+        <ul>
+          <li>Namn på funksjonærar og jurymedlemer.</li>
+          <li>Startliste med klasse, namn, klubb, startnummer og evt. pulje/serienummer.</li>
+          <li>Kastnøklar.</li>
+          <li>Offisielle resultat kunngjeras så snart som mogleg etter stemneslutt og etter at evt. protestar er handsama.</li>
+        </ul>
+        <p>Resultatlister til NHF sin web-ansvarlege/NC-koordinator og aktuelle media. Skal innehalde: namn på arrangementet, stemnetype, jurymedlemer, stad/dato/arrangør, antal deltakarar, premiering, og alle deltakarar med plassering.</p>
+      `},
+      { id:"r94", num:"94", title:"Premiering", bor:true, body:`
+        <ol>
+          <li>I NM og NC: ca. 1/3 av deltakarane i kvar klasse premierast.</li>
+          <li>All premiering bør merkast med stemne, klasse og plassering.</li>
+          <li>Kl. 2: minimum 1/3 av deltakarane.</li>
+          <li>Premiering i A-gruppe skal vera betre enn i B-gruppe.</li>
+          <li>I kl. 1: medaljar til dei 3 beste i NC-sluttsamandraget.</li>
+        </ol>
+        <div class="bor-note"><span>⚠</span><div><strong>«Bør»-merknad:</strong> Regel 94.2 – premiering bør merkast. Tilråding, ikkje absolutt krav.</div></div>
+      `},
+      { id:"r96", num:"96", title:"Avlyste og avbrotne stemner", bor:false, body:`
+        <ol>
+          <li>Avlysing før start: arrangøren kan halde tilbake inntil 5 kr per påmeldt til dekning av utgifter. Stemnet bør arranger på nytt så snart som råd.</li>
+          <li>Avlysing grunna arrangørfeil: all innbetalt startkontingent tilbakebetalast.</li>
+          <li>Avbryting etter start, men &lt;halvparten av rundar: same som regel 96.1.</li>
+          <li>Avbryting etter ≥halvparten av rundane: stemnet er teljande. Resultatliste basert på gjennomførte rundar.</li>
+          <li>Kastar som trekker seg under innleiande kasting: alle han har møtt og skulle møtt får w.o.</li>
+          <li>X-kast/Kongelag: krevst min. halvparten av kastrundane for å bli rangert.</li>
+        </ol>
+      `},
+      { id:"r99", num:"99", title:"Rekordar og adelskalender", bor:false, body:`
+        <ol>
+          <li>Nasjonale rekordar noterast i Kongelagskasting og X-kast (heilmatch, halvmatch, minimatch).</li>
+          <li>Adelskalender førast i Kongelagskasting og X-kast. Oppdaterast årleg.</li>
+          <li>Poeng frå innleiande kasting tel ikkje med i Kongelag-rekordar.</li>
+          <li>Stemnet må vera på offisiell terminliste, eller arrangøren har meldt frå seinast dagen før. Minimum 6 deltakarar.</li>
+        </ol>
+      `},
+    ]
+  },
+  {
+    id: "kap10",
+    chapter: "Kapittel 10",
+    title: "Diverse vedtak",
+    rules: [
+      { id:"r100", num:"100", title:"Reisefordeling", bor:false, body:`
+        <p>Til NHF-årsmøta nyttast reisefordeling per frammøtt representant med stemmerett. Styret godkjenner/korrigerer reiserekningane, som må vera innsendt seinast 14 dagar etter årsmøtet. Utbetaling: seinast 1 månad etter.</p>
+        <p><strong>Satsar:</strong> Faktiske reiseutgifter. Km-sats for privatbil fastsetjast av styret. Reisetidskompensasjon: 3–5 t = 200 kr; 5–7 t = 300 kr; 7–10 t = 400 kr; 10–13 t = 500 kr; over 13 t = 600 kr.</p>
+        <p>Alle medlemsklubbane betaler til eit reisefordelingsfond basert på grunnkontingenten. Fordelas på påfølgande årsmøte.</p>
+      `},
+      { id:"r101", num:"101", title:"Æresmedlem", bor:false, body:`
+        <p>Styret i NHF kan utnemnde æresmedlemer. Krav: er/har vore medlem av tilslutta klubb, og har gjennom fleire år lagt ned eit stort og verdifullt arbeid for hesteskosporten. Aktive kastarar med mange år av gode idrettslege presentasjonar kan også utnemnast.</p>
+        <p>Æresmedlemer: deltar gratis på alle NM, deltar på årsmøte på NHF si rekning (reise og opphald ikkje dekka).</p>
+        <p>Forslag: skriftleg og grunngjevd, kome til styret seinast 2 månader før tildelinga.</p>
+      `},
+      { id:"r102", num:"102", title:"Fullmakt til lovutvalet", bor:false, body:`
+        <p>Lovutvalet kan gjere <em>kosmetiske endringar</em> i lover og reglar (tekst utan å endre innhald/meining) ut ifrå vedtak på årsmøte og styremøte.</p>
+      `},
+      { id:"r103", num:"103", title:"NM X-kast – eige arrangement", bor:false, body:`
+        <p>NM X-kast skal arrangerast som ein eigen konkurranse. Det skal ikkje gå inn som innleiande kasting til NM singel, NC-stemne eller anna stemne.</p>
+      `},
+      { id:"r104", num:"104", title:"Endring av regelverket", bor:false, body:`
+        <p>Endringar av regelverket kan berre skje på ordinært årsmøte eller leiarmøte, med vanleg fleirtal av dei røysteføre.</p>
+      `},
+    ]
+  },
+];
+
+// Build sidebar
+const sidebar = document.getElementById('sidebar');
+RULES.forEach(ch => {
+  const group = document.createElement('div');
+  group.className = 'chapter-group';
+  const numStr = ch.chapter.replace('Kapittel ', '');
+  const btn = document.createElement('button');
+  btn.className = 'chapter-btn';
+  btn.dataset.chapter = ch.id;
+  btn.innerHTML = `<span class="chapter-num">${numStr}</span><span>${ch.title}</span><span class="chevron">▶</span>`;
+  const list = document.createElement('div');
+  list.className = 'rule-list';
+  list.id = 'nav-' + ch.id;
+  ch.rules.forEach(r => {
+    const a = document.createElement('a');
+    a.href = '#' + r.id;
+    a.className = 'rule-link';
+    a.dataset.ruleId = r.id;
+    a.textContent = `Regel ${r.num}: ${r.title}`;
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById(r.id)?.scrollIntoView({behavior:'smooth', block:'start'});
+      document.querySelectorAll('.rule-link').forEach(x => x.classList.remove('active'));
+      a.classList.add('active');
+      closeSidebarIfMobile();
+    });
+    list.appendChild(a);
+  });
+  btn.addEventListener('click', () => {
+    const isOpen = list.classList.contains('open');
+    // close all
+    document.querySelectorAll('.rule-list').forEach(l => l.classList.remove('open'));
+    document.querySelectorAll('.chapter-btn').forEach(b => b.classList.remove('open','active'));
+    if (!isOpen) {
+      list.classList.add('open');
+      btn.classList.add('open','active');
+    }
+  });
+  group.appendChild(btn);
+  group.appendChild(list);
+  sidebar.appendChild(group);
+});
+
+// Build content
+const contentArea = document.getElementById('content-area');
+RULES.forEach(ch => {
+  const sec = document.createElement('section');
+  sec.className = 'chapter-section';
+  sec.id = ch.id;
+  const hdr = document.createElement('div');
+  hdr.className = 'chapter-header';
+  hdr.innerHTML = `<span class="chapter-label">${ch.chapter}</span><span class="chapter-title">${ch.title}</span>`;
+  sec.appendChild(hdr);
+  ch.rules.forEach(r => {
+    const card = document.createElement('div');
+    card.className = 'rule-card';
+    card.id = r.id;
+    const ruleHeader = document.createElement('div');
+    ruleHeader.className = 'rule-header';
+    ruleHeader.innerHTML = `
+      <span class="rule-num">${r.num}</span>
+      <span class="rule-title">${r.title}</span>
+      ${r.bor ? '<span class="rule-tag tag-bor">«bør»</span>' : ''}
+      <span class="rule-chevron">▶</span>
+    `;
+    const body = document.createElement('div');
+    body.className = 'rule-body';
+    body.innerHTML = r.body;
+    ruleHeader.addEventListener('click', () => {
+      const isExp = ruleHeader.classList.contains('expanded');
+      ruleHeader.classList.toggle('expanded', !isExp);
+      body.classList.toggle('open', !isExp);
+    });
+    card.appendChild(ruleHeader);
+    card.appendChild(body);
+    sec.appendChild(card);
+  });
+  contentArea.appendChild(sec);
+});
+
+// Search
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+
+function escapeRegex(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
+function stripHtml(h){ const d=document.createElement('div'); d.innerHTML=h; return d.textContent||''; }
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim();
+  if (!q) {
+    searchResults.classList.remove('visible');
+    contentArea.style.display = '';
+    return;
+  }
+  const re = new RegExp(escapeRegex(q), 'gi');
+  const hits = [];
+  RULES.forEach(ch => {
+    ch.rules.forEach(r => {
+      const text = 'Regel '+r.num+' '+r.title+' '+stripHtml(r.body);
+      if (re.test(text)) {
+        const excerpt = stripHtml(r.body).replace(/\s+/g,' ').trim().substring(0,160);
+        hits.push({ chapter: ch.chapter, title: ch.title, rule: r, excerpt });
+      }
+    });
+  });
+  contentArea.style.display = 'none';
+  searchResults.classList.add('visible');
+  if (!hits.length) {
+    searchResults.innerHTML = '<div class="no-results">Ingen treff for «'+q+'»</div>';
+    return;
+  }
+  const highlighted = (t) => t.replace(re, m => `<mark>${m}</mark>`);
+  searchResults.innerHTML = `<p class="results-header">${hits.length} treff for «${q}»</p>` +
+    hits.map(h => `
+      <div class="result-item" onclick="goToRule('${h.rule.id}')">
+        <div class="result-rule">${h.chapter}: ${h.title} — Regel ${h.rule.num}</div>
+        <div class="result-title">${highlighted(h.rule.title)}</div>
+        <div class="result-excerpt">${highlighted(h.excerpt)}…</div>
+      </div>
+    `).join('');
+});
+
+function goToRule(id) {
+  searchInput.value = '';
+  searchResults.classList.remove('visible');
+  contentArea.style.display = '';
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({behavior:'smooth', block:'start'});
+      const header = el.querySelector('.rule-header');
+      const body = el.querySelector('.rule-body');
+      if (header && !header.classList.contains('expanded')) {
+        header.classList.add('expanded');
+        body.classList.add('open');
+      }
+    }
+  }, 50);
+}
+
+// Mobile menu
+document.getElementById('menu-btn').addEventListener('click', () => {
+  sidebar.classList.toggle('open');
+});
+function closeSidebarIfMobile(){ if(window.innerWidth<=768) sidebar.classList.remove('open'); }
+
+// Back to top
+const backTop = document.getElementById('back-top');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('visible', window.scrollY > 400);
+  // Update active link in sidebar
+  const all = contentArea.querySelectorAll('.rule-card');
+  let active = null;
+  all.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top <= 120) active = card.id;
+  });
+  if (active) {
+    document.querySelectorAll('.rule-link').forEach(l => {
+      l.classList.toggle('active', l.dataset.ruleId === active);
+    });
+  }
+}, {passive:true});
+backTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+// Open first chapter by default
+document.querySelector('.chapter-btn')?.click();
+</script>
+</body>
+</html>
