@@ -1,19 +1,52 @@
+function buildRuleBody(r) {
+  if (r.body) return r.body; // gammalt format, bruk som det er
+  let html = '';
+  if (r.tekst) {
+    html += r.tekst.split(/\n\n+/).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+  }
+  if (r.punkt && r.punkt.length) {
+    html += '<ol>' + r.punkt.map(p => `<li>${p.replace(/\n/g, '<br>')}</li>`).join('') + '</ol>';
+  }
+  if (r.merknad) {
+    html += `<div class="bor-note"><span>ℹ</span><div><strong>Merknad:</strong> ${r.merknad}</div></div>`;
+  }
+  return html || '<p>–</p>';
+}
+
+function normalizeRules(raw) {
+  const chapters = Array.isArray(raw) ? raw : (raw.kapittel || []);
+  return chapters.map(ch => {
+    const tittelFull = ch.tittel || ch.title || '';
+    const chapterLabel = ch.chapter || tittelFull.match(/^Kapittel \d+/)?.[0] || '';
+    const title = ch.title || tittelFull.replace(/^Kapittel \d+[:\s.]*/i, '').replace(/\.$/, '').trim();
+    const rules = (ch.rules || ch.reglar || []).map(r => ({
+      id: r.id,
+      num: r.num || r.nummer,
+      title: r.title || r.tittel,
+      bor: r.bor || !!r.merknad,
+      body: buildRuleBody(r)
+    }));
+    return { id: ch.id, chapter: chapterLabel, title, rules };
+  });
+}
+
 async function init() {
   let RULES = null;
 
-  // 1. Prøv localStorage (lagra frå editoren)
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored) { try { RULES = JSON.parse(stored); } catch(e) {} }
+  // 1. Hent alltid gjeldande data frå json-fila
+  try {
+    const resp = await fetch('./reglar.json');
+    if (resp.ok) {
+      const raw = await resp.json();
+      RULES = normalizeRules(raw);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(RULES));
+    }
+  } catch(e) {}
 
-  // 2. Prøv å hente reglar.json frå same mappe
+  // 2. Fallback til localStorage viss henting feila (t.d. offline)
   if (!RULES) {
-    try {
-      const resp = await fetch('./reglar.json');
-      if (resp.ok) {
-        RULES = await resp.json();
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(RULES));
-      }
-    } catch(e) {}
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) { try { RULES = JSON.parse(stored); } catch(e) {} }
   }
 
   // 3. Ingen data funne
@@ -21,7 +54,7 @@ async function init() {
     document.getElementById('content-area').innerHTML =
       '<div style="padding:2rem;color:var(--text2);text-align:center">' +
       '<p style="font-size:1.1rem;margin-bottom:.5rem">Ingen regeldata funne.</p>' +
-      '<p>Opne <strong>nhf-rediger.html</strong> for å laste inn <code>reglar.json</code>, og kom tilbake hit.</p></div>';
+      '<p>Opne <strong>nhf-rediger.html</strong> for å laste inn <code>gjeldane kilde (json)</code>, og kom tilbake hit.</p></div>';
     return;
   }
 
