@@ -126,8 +126,6 @@ function buildContent(RULES) {
       ruleHeader.innerHTML = `
         <span class="rule-num">${r.num}</span>
         <span class="rule-title">${r.title}</span>
-        ${r.bor ? '<span class="rule-tag tag-bor">«bør»</span>' : ''}
-        <span class="rule-chevron">▶</span>
       `;
       const body = document.createElement('div');
       body.className = 'rule-body';
