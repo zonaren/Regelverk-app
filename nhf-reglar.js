@@ -178,7 +178,7 @@ function setupMobileAndScroll() {
     backTop.classList.toggle('visible', window.scrollY > 400);
     const all = contentArea.querySelectorAll('.rule-card');
     let active = null;
-    all.forEach(card => { if (card.getBoundingClientRect().top <= 120) active = card.id; });
+    all.forEach(card => { if (card.getBoundingClientRect().top <= 70) active = card.id; });
     if (active) {
       document.querySelectorAll('.rule-link').forEach(l => l.classList.toggle('active', l.dataset.ruleId === active));
     }
