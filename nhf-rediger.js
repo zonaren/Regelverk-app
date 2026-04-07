@@ -1,3 +1,48 @@
+// ── Body field converters ────────────────────────────────────────────────────
+function parseBodyToFields(html) {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html || '';
+  const punkt = [];
+  const ol = tmp.querySelector('ol');
+  if (ol) {
+    ol.querySelectorAll('li').forEach(li => {
+      li.querySelectorAll('br').forEach(br => br.replaceWith('\n'));
+      punkt.push(li.textContent.trim());
+    });
+    ol.remove();
+  }
+  let merknad = '';
+  const borNote = tmp.querySelector('.bor-note');
+  if (borNote) {
+    const inner = borNote.querySelector('div') || borNote;
+    merknad = inner.textContent.replace(/^Merknad:\s*/i, '').trim();
+    borNote.remove();
+  }
+  const pTags = tmp.querySelectorAll('p');
+  let tekst = '';
+  if (pTags.length) {
+    const parts = [];
+    pTags.forEach(p => {
+      p.querySelectorAll('br').forEach(br => br.replaceWith('\n'));
+      const t = p.textContent.trim();
+      if (t) parts.push(t);
+    });
+    tekst = parts.join('\n\n');
+  } else {
+    tmp.querySelectorAll('br').forEach(br => br.replaceWith('\n'));
+    tekst = tmp.textContent.trim();
+  }
+  return { tekst, punkt, merknad };
+}
+
+function fieldsToBody({ tekst, punkt, merknad }) {
+  let html = '';
+  if (tekst) html += tekst.split(/\n\n+/).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+  if (punkt && punkt.length) html += '<ol>' + punkt.map(p => `<li>${p.replace(/\n/g, '<br>')}</li>`).join('') + '</ol>';
+  if (merknad) html += `<div class="bor-note"><span>ℹ</span><div><strong>Merknad:</strong> ${merknad}</div></div>`;
+  return html || '';
+}
+
 // ── Storage helpers ─────────────────────────────────────────────────────────
 function loadData() {
   const stored = localStorage.getItem(STORAGE_KEY);
@@ -266,41 +311,124 @@ function buildRuleCard(r, ri, ch, ci) {
   bodySection.className = 'rule-edit-body';
   bodySection.style.display = 'none';
 
+  // ── Tabs ──
   const tabs = document.createElement('div');
   tabs.className = 'body-tabs';
   const tabEdit = document.createElement('button');
   tabEdit.className = 'tab-btn active';
-  tabEdit.textContent = 'Rediger HTML';
+  tabEdit.textContent = 'Rediger';
   const tabPreview = document.createElement('button');
   tabPreview.className = 'tab-btn';
   tabPreview.textContent = 'Førehandsvisning';
   tabs.append(tabEdit, tabPreview);
 
-  const textarea = document.createElement('textarea');
-  textarea.className = 'body-textarea';
-  textarea.value = r.body;
-  textarea.spellcheck = false;
-  textarea.addEventListener('input', () => { r.body = textarea.value; autoSave(); });
+  // Parse existing body HTML into structured fields, or use new-format fields directly
+  const fields = r.body
+    ? parseBodyToFields(r.body)
+    : { tekst: r.tekst || '', punkt: Array.isArray(r.punkt) ? [...r.punkt] : [], merknad: r.merknad || '' };
+  function syncBody() { r.body = fieldsToBody(fields); autoSave(); }
 
+  // ── Edit panel ──
+  const editPanel = document.createElement('div');
+  editPanel.className = 'structured-edit-panel';
+
+  // Hovudtekst
+  const tekstLabel = document.createElement('label');
+  tekstLabel.className = 'field-label';
+  tekstLabel.textContent = 'Hovudtekst';
+  const tekstTa = document.createElement('textarea');
+  tekstTa.className = 'body-textarea';
+  tekstTa.placeholder = 'Skriv inn hovudtekst (dobbel linjeskift = nytt avsnitt)…';
+  tekstTa.value = fields.tekst;
+  tekstTa.addEventListener('input', () => { fields.tekst = tekstTa.value; syncBody(); });
+
+  // Punkt
+  const punktLabel = document.createElement('label');
+  punktLabel.className = 'field-label';
+  punktLabel.textContent = 'Punkt (nummerert liste)';
+  const punktList = document.createElement('div');
+  punktList.className = 'punkt-list';
+
+  function buildPunktRow(idx) {
+    const row = document.createElement('div');
+    row.className = 'punkt-row';
+    const num = document.createElement('span');
+    num.className = 'punkt-num';
+    num.textContent = (idx + 1) + '.';
+    const ta = document.createElement('textarea');
+    ta.className = 'punkt-ta';
+    ta.value = fields.punkt[idx];
+    ta.placeholder = 'Punkt ' + (idx + 1) + '…';
+    ta.rows = 1;
+    function resize() { ta.style.height = 'auto'; ta.style.height = ta.scrollHeight + 'px'; }
+    ta.addEventListener('input', () => { fields.punkt[idx] = ta.value; syncBody(); resize(); });
+    setTimeout(resize, 0);
+    const rowActions = document.createElement('div');
+    rowActions.className = 'punkt-row-actions';
+    const upBtn = iconBtn('↑', 'Flytt opp', false);
+    upBtn.addEventListener('click', () => {
+      if (idx === 0) return;
+      [fields.punkt[idx - 1], fields.punkt[idx]] = [fields.punkt[idx], fields.punkt[idx - 1]];
+      syncBody(); renderPunktList();
+    });
+    const downBtn = iconBtn('↓', 'Flytt ned', false);
+    downBtn.addEventListener('click', () => {
+      if (idx === fields.punkt.length - 1) return;
+      [fields.punkt[idx], fields.punkt[idx + 1]] = [fields.punkt[idx + 1], fields.punkt[idx]];
+      syncBody(); renderPunktList();
+    });
+    const delBtn = iconBtn('✕', 'Fjern punkt', true);
+    delBtn.addEventListener('click', () => { fields.punkt.splice(idx, 1); syncBody(); renderPunktList(); });
+    rowActions.append(upBtn, downBtn, delBtn);
+    row.append(num, ta, rowActions);
+    return row;
+  }
+
+  function renderPunktList() {
+    punktList.innerHTML = '';
+    fields.punkt.forEach((_, idx) => punktList.appendChild(buildPunktRow(idx)));
+  }
+  renderPunktList();
+
+  const addPunktBtn = document.createElement('button');
+  addPunktBtn.className = 'btn-add-punkt';
+  addPunktBtn.textContent = '+ Legg til punkt';
+  addPunktBtn.addEventListener('click', () => {
+    fields.punkt.push('');
+    syncBody(); renderPunktList();
+    punktList.lastElementChild?.querySelector('textarea')?.focus();
+  });
+
+  // Merknad
+  const merknadLabel = document.createElement('label');
+  merknadLabel.className = 'field-label';
+  merknadLabel.textContent = 'Merknad (valfri)';
+  const merknadInput = document.createElement('input');
+  merknadInput.type = 'text';
+  merknadInput.className = 'merknad-input';
+  merknadInput.placeholder = 'Valfri merknad til regelen…';
+  merknadInput.value = fields.merknad;
+  merknadInput.addEventListener('input', () => { fields.merknad = merknadInput.value; syncBody(); });
+
+  editPanel.append(tekstLabel, tekstTa, punktLabel, punktList, addPunktBtn, merknadLabel, merknadInput);
+
+  // ── Preview panel ──
   const preview = document.createElement('div');
   preview.className = 'body-preview';
   preview.style.display = 'none';
 
   tabEdit.addEventListener('click', () => {
-    tabEdit.classList.add('active');
-    tabPreview.classList.remove('active');
-    textarea.style.display = '';
-    preview.style.display = 'none';
+    tabEdit.classList.add('active'); tabPreview.classList.remove('active');
+    editPanel.style.display = ''; preview.style.display = 'none';
   });
   tabPreview.addEventListener('click', () => {
-    tabPreview.classList.add('active');
-    tabEdit.classList.remove('active');
-    textarea.style.display = 'none';
-    preview.innerHTML = r.body;
+    tabPreview.classList.add('active'); tabEdit.classList.remove('active');
+    editPanel.style.display = 'none';
+    preview.innerHTML = fieldsToBody(fields);
     preview.style.display = '';
   });
 
-  bodySection.append(tabs, textarea, preview);
+  bodySection.append(tabs, editPanel, preview);
   card.appendChild(bodySection);
 
   // Toggle body section
@@ -310,7 +438,11 @@ function buildRuleCard(r, ri, ch, ci) {
     editBtn.style.background = isOpen ? '' : 'var(--accent-light)';
     editBtn.style.borderColor = isOpen ? '' : 'var(--accent2)';
     editBtn.style.color = isOpen ? '' : 'var(--accent)';
-    if (!isOpen) textarea.focus();
+    if (!isOpen) {
+      // Re-render punkt list now that section is visible (auto-resize works correctly)
+      renderPunktList();
+      tekstTa.focus();
+    }
   });
 
   return card;
