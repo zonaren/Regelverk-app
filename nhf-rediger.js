@@ -197,7 +197,7 @@ function buildChapterCard(ch, ci) {
   addBtn.className = 'btn-add-rule';
   addBtn.textContent = '+ Legg til regel';
   addBtn.addEventListener('click', () => {
-    const newRule = { id: genId(), num: '', title: 'Ny regel', bor: false, body: '<p></p>' };
+    const newRule = { id: genId(), num: '', title: 'Ny regel', body: '<p></p>' };
     ch.rules.push(newRule);
     autoSave();
     // Re-render just the rules list
@@ -214,7 +214,7 @@ function buildChapterCard(ch, ci) {
 }
 
 // ── Build rule card ──────────────────────────────────────────────────────────
-function buildRuleCard(r, ri, ch, ci) {
+function buildRuleCard(r, ri, ch) {
   const card = document.createElement('div');
   card.className = 'rule-edit-card';
   card.id = 'rule-' + r.id;
@@ -234,15 +234,6 @@ function buildRuleCard(r, ri, ch, ci) {
   titleInput.value = r.title;
   titleInput.title = 'Regeltittel';
   titleInput.addEventListener('input', () => { r.title = titleInput.value; autoSave(); });
-
-  const borLabel = document.createElement('label');
-  borLabel.className = 'bor-toggle';
-  const borCheck = document.createElement('input');
-  borCheck.type = 'checkbox';
-  borCheck.checked = r.bor;
-  borCheck.addEventListener('change', () => { r.bor = borCheck.checked; autoSave(); });
-  borLabel.append(borCheck, document.createTextNode(' ⚠ Bør'));
-  borLabel.title = 'Merk som «bør»-regel';
 
   const actions = document.createElement('div');
   actions.className = 'rule-actions';
@@ -271,7 +262,7 @@ function buildRuleCard(r, ri, ch, ci) {
   defaultOpt.value = '';
   defaultOpt.textContent = 'Flytt til…';
   moveSelect.appendChild(defaultOpt);
-  rules.forEach((c, idx) => {
+  rules.forEach(c => {
     if (c.id === ch.id) return;
     const opt = document.createElement('option');
     opt.value = c.id;
@@ -303,7 +294,7 @@ function buildRuleCard(r, ri, ch, ci) {
   });
 
   actions.append(upBtn, downBtn, moveSelect, editBtn, delBtn);
-  hdr.append(numInput, titleInput, borLabel, actions);
+  hdr.append(numInput, titleInput, actions);
   card.appendChild(hdr);
 
   // Body editor (hidden by default)
