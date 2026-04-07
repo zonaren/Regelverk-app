@@ -127,8 +127,9 @@ function buildContent(RULES) {
         <span class="rule-num">${r.num}</span>
         <span class="rule-title">${r.title}</span>
       `;
+      ruleHeader.classList.add('expanded');
       const body = document.createElement('div');
-      body.className = 'rule-body';
+      body.className = 'rule-body open';
       body.innerHTML = r.body;
       ruleHeader.addEventListener('click', () => {
         const isExp = ruleHeader.classList.contains('expanded');
