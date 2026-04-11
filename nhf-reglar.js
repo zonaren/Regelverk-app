@@ -87,6 +87,7 @@ function buildSidebar(RULES) {
       a.textContent = `Regel ${r.num}: ${r.title}`;
       a.addEventListener('click', (e) => {
         e.preventDefault();
+        clearSearch();
         document.getElementById(r.id)?.scrollIntoView({behavior:'smooth', block:'start'});
         document.querySelectorAll('.rule-link').forEach(x => x.classList.remove('active'));
         a.classList.add('active');
@@ -95,6 +96,7 @@ function buildSidebar(RULES) {
       list.appendChild(a);
     });
     btn.addEventListener('click', () => {
+      clearSearch();
       const isOpen = list.classList.contains('open');
       document.querySelectorAll('.rule-list').forEach(l => l.classList.remove('open'));
       document.querySelectorAll('.chapter-btn').forEach(b => b.classList.remove('open','active'));
@@ -167,15 +169,30 @@ function highlightNode(node, re) {
   Array.from(node.childNodes).forEach(child => highlightNode(child, re));
 }
 
+function clearSearch() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const contentArea = document.getElementById('content-area');
+  const clearBtn = document.getElementById('search-clear');
+  searchInput.value = '';
+  searchResults.classList.remove('visible');
+  contentArea.style.display = '';
+  if (clearBtn) clearBtn.hidden = true;
+}
+
 function setupSearch(RULES) {
   const searchInput = document.getElementById('search-input');
   const searchResults = document.getElementById('search-results');
   const contentArea = document.getElementById('content-area');
+  const clearBtn = document.getElementById('search-clear');
   function escapeRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
   function stripHtml(h) { const d = document.createElement('div'); d.innerHTML = h; return d.textContent || ''; }
 
+  clearBtn.addEventListener('click', () => { clearSearch(); searchInput.focus(); });
+
   searchInput.addEventListener('input', () => {
     const q = searchInput.value.trim();
+    clearBtn.hidden = !q;
     if (!q) { searchResults.classList.remove('visible'); contentArea.style.display = ''; return; }
     const re = new RegExp(escapeRegex(q), 'gi');
     const hits = [];

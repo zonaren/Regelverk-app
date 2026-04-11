@@ -15,6 +15,14 @@
 .search-wrap input:focus { border-color: var(--accent2); box-shadow: 0 0 0 3px rgba(74,143,65,.15); }
 .search-wrap input::placeholder { color: var(--text3); }
 .search-icon { position: absolute; left: .7rem; top: 50%; transform: translateY(-50%); color: var(--text3); font-size: .95rem; pointer-events: none; }
+.search-clear {
+  position: absolute; right: .5rem; top: 50%; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer;
+  color: var(--text3); font-size: .95rem; line-height: 1;
+  padding: .2rem .35rem; border-radius: 4px;
+  transition: color .12s, background .12s;
+}
+.search-clear:hover { color: var(--text); background: var(--surface2); }
 
 /* === SIDEBAR (viewer interactions) === */
 .chapter-btn.active { color: var(--accent); }
