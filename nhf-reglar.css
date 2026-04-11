@@ -132,8 +132,8 @@ main { max-width: 820px; }
 .result-rule { font-size: .72rem; color: var(--accent); font-weight: 700; margin-bottom: .25rem; }
 .result-title { font-weight: 600; font-size: .95rem; margin-bottom: .2rem; }
 .result-excerpt { font-size: .88rem; color: var(--text); }
-mark { background: #fff3a0; color: var(--text); border-radius: 2px; padding: 0 2px; }
-@media(prefers-color-scheme: dark) { mark { background: #4a3a00; } }
+mark { background: #ffe033; color: #1a1a00; border-radius: 2px; padding: 0 2px; }
+@media(prefers-color-scheme: dark) { mark { background: #ffe033; color: #1a1a00; } }
 .no-results { text-align: center; padding: 3rem 1rem; color: var(--text3); }
 
 /* === BACK TO TOP === */
