@@ -106,7 +106,7 @@ main { max-width: 820px; }
 .rule-header.expanded .rule-chevron { transform: rotate(90deg); }
 .rule-body { padding: 1rem 1.1rem; display: none; }
 .rule-body.open { display: block; }
-.rule-body p, .rule-body li { font-size: .9rem; color: var(--text2); margin-bottom: .5rem; }
+.rule-body p, .rule-body li { font-size: .9rem; color: var(--text); margin-bottom: .5rem; }
 .rule-body ol, .rule-body ul { padding-left: 1.4rem; }
 .rule-body li { margin-bottom: .35rem; }
 .rule-body strong { color: var(--text); font-weight: 600; }
