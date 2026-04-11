@@ -144,12 +144,36 @@ function buildContent(RULES) {
   });
 }
 
+function highlightNode(node, re) {
+  if (node.nodeType === Node.TEXT_NODE) {
+    re.lastIndex = 0;
+    if (!re.test(node.textContent)) return;
+    re.lastIndex = 0;
+    const text = node.textContent;
+    const frag = document.createDocumentFragment();
+    let last = 0, m;
+    while ((m = re.exec(text)) !== null) {
+      if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+      const mark = document.createElement('mark');
+      mark.textContent = m[0];
+      frag.appendChild(mark);
+      last = m.index + m[0].length;
+    }
+    if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+    node.parentNode.replaceChild(frag, node);
+    return;
+  }
+  if (node.nodeName === 'SCRIPT' || node.nodeName === 'STYLE') return;
+  Array.from(node.childNodes).forEach(child => highlightNode(child, re));
+}
+
 function setupSearch(RULES) {
   const searchInput = document.getElementById('search-input');
   const searchResults = document.getElementById('search-results');
   const contentArea = document.getElementById('content-area');
   function escapeRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
   function stripHtml(h) { const d = document.createElement('div'); d.innerHTML = h; return d.textContent || ''; }
+
   searchInput.addEventListener('input', () => {
     const q = searchInput.value.trim();
     if (!q) { searchResults.classList.remove('visible'); contentArea.style.display = ''; return; }
@@ -157,49 +181,67 @@ function setupSearch(RULES) {
     const hits = [];
     RULES.forEach(ch => {
       ch.rules.forEach(r => {
-        const text = 'Regel ' + r.num + ' ' + r.title + ' ' + stripHtml(r.body);
-        if (re.test(text)) {
-          const excerpt = stripHtml(r.body).replace(/\s+/g,' ').trim().substring(0,160);
-          hits.push({ chapter: ch.chapter, title: ch.title, rule: r, excerpt });
+        re.lastIndex = 0;
+        if (re.test('Regel ' + r.num + ' ' + r.title + ' ' + stripHtml(r.body))) {
+          hits.push({ chapter: ch.chapter, title: ch.title, rule: r });
         }
       });
     });
     contentArea.style.display = 'none';
     searchResults.classList.add('visible');
-    if (!hits.length) { searchResults.innerHTML = '<div class="no-results">Ingen treff for «' + q + '»</div>'; return; }
-    const highlighted = (t) => t.replace(re, m => `<mark>${m}</mark>`);
-    searchResults.innerHTML = `<p class="results-header">${hits.length} treff for «${q}»</p>` +
-      hits.map(h => `
-        <div class="result-item" onclick="goToRule('${h.rule.id}')">
-          <div class="result-rule">${h.chapter}: ${h.title} — Regel ${h.rule.num}</div>
-          <div class="result-title">${highlighted(h.rule.title)}</div>
-          <div class="result-excerpt">${highlighted(h.excerpt)}…</div>
-        </div>
-      `).join('');
+
+    const frag = document.createDocumentFragment();
+    const header = document.createElement('p');
+    header.className = 'results-header';
+    header.textContent = hits.length
+      ? `${hits.length} treff for «${q}»`
+      : '';
+    frag.appendChild(header);
+
+    if (!hits.length) {
+      const none = document.createElement('div');
+      none.className = 'no-results';
+      none.textContent = `Ingen treff for «${q}»`;
+      frag.appendChild(none);
+    } else {
+      hits.forEach(h => {
+        const card = document.createElement('div');
+        card.className = 'rule-card';
+
+        const label = document.createElement('div');
+        label.className = 'result-rule';
+        label.style.cssText = 'padding:.6rem 1.1rem 0';
+        label.textContent = `${h.chapter}: ${h.title}`;
+        card.appendChild(label);
+
+        const ruleHeader = document.createElement('div');
+        ruleHeader.className = 'rule-header expanded';
+        ruleHeader.style.cursor = 'default';
+        const numEl = document.createElement('span');
+        numEl.className = 'rule-num';
+        numEl.textContent = h.rule.num;
+        const titleEl = document.createElement('span');
+        titleEl.className = 'rule-title';
+        titleEl.textContent = h.rule.title;
+        highlightNode(titleEl, re);
+        ruleHeader.appendChild(numEl);
+        ruleHeader.appendChild(titleEl);
+        card.appendChild(ruleHeader);
+
+        const body = document.createElement('div');
+        body.className = 'rule-body open';
+        body.innerHTML = h.rule.body;
+        highlightNode(body, re);
+        card.appendChild(body);
+
+        frag.appendChild(card);
+      });
+    }
+
+    searchResults.innerHTML = '';
+    searchResults.appendChild(frag);
   });
 }
-
-function goToRule(id) {
-  const searchInput = document.getElementById('search-input');
-  const searchResults = document.getElementById('search-results');
-  const contentArea = document.getElementById('content-area');
-  searchInput.value = '';
-  searchResults.classList.remove('visible');
-  contentArea.style.display = '';
-  setTimeout(() => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({behavior:'smooth', block:'start'});
-      const header = el.querySelector('.rule-header');
-      const body = el.querySelector('.rule-body');
-      if (header && !header.classList.contains('expanded')) {
-        header.classList.add('expanded');
-        body.classList.add('open');
-      }
-    }
-  }, 50);
-}
-window.goToRule = goToRule;
 
 function setupMobileAndScroll() {
   const sidebar = document.getElementById('sidebar');
