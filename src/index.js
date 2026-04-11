@@ -1,16 +1,6 @@
 function buildRuleBody(r) {
   if (r.body) return r.body; // gammalt format, bruk som det er
-  let html = '';
-  if (r.tekst) {
-    html += r.tekst.split(/\n\n+/).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
-  }
-  if (r.punkt && r.punkt.length) {
-    html += '<ol>' + r.punkt.map(p => `<li>${p.replace(/\n/g, '<br>')}</li>`).join('') + '</ol>';
-  }
-  if (r.merknad) {
-    html += `<div class="bor-note"><span>ℹ</span><div><strong>Merknad:</strong> ${r.merknad}</div></div>`;
-  }
-  return html || '<p>–</p>';
+  return fieldsToBody({ tekst: r.tekst, punkt: r.punkt, merknad: r.merknad }) || '<p>–</p>';
 }
 
 function normalizeRules(raw) {
@@ -54,7 +44,7 @@ async function init() {
     document.getElementById('content-area').innerHTML =
       '<div style="padding:2rem;color:var(--text2);text-align:center">' +
       '<p style="font-size:1.1rem;margin-bottom:.5rem">Ingen regeldata funne.</p>' +
-      '<p>Opne <strong>nhf-rediger.html</strong> for å laste inn <code>gjeldane kilde (json)</code>, og kom tilbake hit.</p></div>';
+      '<p>Opne <strong>edit.html</strong> for å laste inn regeldata.</p></div>';
     return;
   }
 
