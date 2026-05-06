@@ -1,0 +1,502 @@
+{
+  "tittel": "Norges Hesteskokasterforbund – Regelverk",
+  "versjon": "2026",
+  "innleiing": "Hesteskokonkurransar blir avvikla etter forskjellege måtar/metodar (Kapittel4). Tradisjonelle metodar, såkalla «mann-mot-mann»-metodar er Seriemetoden, Gloppen-metoden, Dobbel Gloppen-metode, Cup-metoden. Kastarane får skårpoeng etter regel 21, og kamppoeng etter regel 22.\n\nAndre metodar er Kongelags-metoden og X-kast. Kastarane får her poeng etter avstaden skoen ligg frå stikka etter regel 23. Dessutan har vi hesteskogolf, regel 46.\n\nHesteskokasting blir som regel avvikla i to avdelingar: innleiande kasting og avsluttande kasting, der en innleiande kastinga er kvalifisering til den avsluttande kasting.\n\nI tillegg til singlekasting blir det også avvikla konkurransar i parkasting (regel 11.5) og lag (regel 51)\n\nMerk: Når det i regelverket står deltakar så meiner ein paret i parkast og personen i singlekasting.",
+  "kapittel": [
+    {
+      "id": "kap1",
+      "tittel": "Kapittel 1: Innledning, utstyr, bane, avvikling, organisering.",
+      "reglar": [
+        {
+          "id": "r01",
+          "nummer": "01",
+          "tittel": "Metodar",
+          "tekst": "Konkurransar i hesteskokasting blir avvikla etter forskjellige metodar/måtar\n\nA: Tradisjonelle metodar.\n\nDette er såkalla «mann mot mann»metodar og er: Seriemetoden, regel 40, Gloppen metoden, regel 41, dobbel Gloppen metode regel 42, Nordhordlandsmetoden regel 47 og cupmetoden, regel 45. Kastarane får er skårpoeng etter regel 21 og kamppoeng etter regel 22.\n\nB: Andre metodar:\n\nDette er X-kast regel 43 og Kongeleag regel. Kastarane får her poeng etter avstanden frå stikka regel 23. Dessutan har vi hesteskogolf regel 46."
+        },
+        {
+          "id": "r02",
+          "nummer": "02",
+          "tittel": "Generelt",
+          "tekst": "Konkurransar i hesteskokasting blir i dei fleste tilfelle avvikla i to avdelingar. Innleiande kasting og avsluttande kasting, der innleiande kastingaer er kvalifisering for den avsluttande kastinga. Unntak frå dette er reine X-kast konkurransar og reine kongelagskasting og hesteskogolf."
+        },
+        {
+          "id": "r03",
+          "nummer": "03",
+          "tittel": "Singelkasting, parkasting og lagkasting",
+          "tekst": "I tillegg til singelkasting blir det også avvikla konkurransar i parkasting regel 11.5 og lag regel 51. Når et i regelverk står deltakar, meiner ein personen i singelkasting, paret i parkasting og laget i lagkonkurransar."
+        },
+        {
+          "id": "r10",
+          "nummer": "10",
+          "tittel": "Utstyr, bane",
+          "punkt": [
+            "Hestesko som skal nyttast under konkurranse skal ha den tradisjonelle norske hesteskoforma. Hesteskoen skal være tilnærma oval. Hola i skoen, sporet og greva på undersida av skoen kan sløyfast. Overflata kan være ru, \"prikka\". Alle former for utradisjonelt tilleggsutstyr som skruar, muttrar, kroker, o.l. er ikkje tillate. Skotypen skal dessutan være tilgjengelege for kastarar flest. Fylgjande maksimums mål gjeld: Vekt: 615 gram, breidde 140 mm, lengde 155 mm, opning 80 mm, grev inkl. gods 35 mm .",
+            "Kvar deltakar skal nytte 2 skor ved avvikling etter tradisjonelle kastmetodar. Ved bruk av andre kastmetodar skal det nyttast 4 skor. Kvar deltakar skal kaste alle skorne etter kvarandre.",
+            "Det skal kastast på ei flat bane mot ei jarnstikke med diameter 18-22 mm og med ei høgd over bakken på 22-30 cm. Kastet utførast frå ei kaststikke til ei anna kaststikke. Avstanden mellom stikkene: 10 m. Det kan godtakast ein avstandsvariasjon på +/- 5 cm mellom stikkene. Området rundt kaststikkene, ein sirkel med radius på minimum 1 meter, skal være grus/sand."
+          ]
+        },
+        {
+          "id": "r11",
+          "nummer": "11",
+          "tittel": "Generelle bestemmelsar",
+          "punkt": [
+            "Eit hesteskokast skal utførast ved ei kaststikke. Fremste tåspiss må være inntil 20 cm frå stikka når skoen kastast.\n\nVed særlege forhold, som til dømes ujamnt underlag, kan arrangøren gjere unntak frå kravet om maksimal avstand på 20 cm. Slike avvik skal ikkje gi deltakarane konkurransefordel, og må heller ikkje hindre eller forstyrre andre deltakarar.",
+            "Deltakarane må ikkje forstyrre kvarandre under kastinga, og heller ikkje snakke over bana. Andre kastere skal stå med god avstand bak den kastaren som er aktiv og vera stille.",
+            "Arrangør avgjer avviklingsmetode, - som kan varierast frå klasse til klasse. Avviklingsmetode for NM og nasjonale NC-stemner skal godkjennast av NHF.",
+            "Kastarane skal bytast om å kaste som nr. 1 og 2 (og 3). Kastar ein i feil rekkefølge skal dette rettast opp ved neste stikke. (tradisjonell)",
+            "Ved parkasting står ein kastar frå kvart av dei deltakande par ved den eine stikka, dei andre ved motsatt stikke. Kastarane har ikkje lov til å pendle mellom stikkene under konkurransen. Kastarane som dannar par skal nytte same skor. Kastarane skal gjennomføre heile konkurransen på den banehalvdelen der vedkomande startar. (tradisjonell)",
+            "I singelkasting kan to/tre personar som konkurrerar stå ved ei stikke, og to/tre personar som konkurrerar mot kvarandre stå ved motsett stikke. Kastarane kan her pendle mellom stikkene, men ikkje før alle sko er kasta. (tradisjonell)",
+            "Deltakarar som ikkje er kvalifisert til avsluttande kasting, skal etter innleiande kast, evt. etter mellomrunde, rangerast etter kamppoeng, ved lik kamppoeng etter skår (GM). Ved bruk av X-kast som innleiande kasting skjer rangeringa etter poeng.",
+            "Antal kastrunder kan varierast innan dei enkelte klasser/grupper. Totalt antal kastrundar pr. konkurranse er avgrensa slik: 1 dags stemne: 2 deltakarar pr. bane under innleiande kasting, inntil 18 kastrundar. 3 deltakarar pr. bane under innleiande kasting, inntil 14 kastrundar. 2 dagars stemne: Overståande antal rundar kan aukast til høvesvis 32 og 25 kastrundar. (tradisjonell)",
+            "Når avsluttande kasting vert avvikla etter cupmetoden (regel 45) skal det nyttast seeding i fyrste og andre cuprunde både i gruppe A og gruppe B.\n\nSeedinga skal skje på følgjande måte: Deltakarane som er kvalifisert til avsluttande kasting skal rangerast etter oppnådde kamppoeng og skår under innleiande kasting og inndelast i 3 puljer, A, B og C. Den beste tredjedel vert fordelt til pulje A, nestbeste til pulje B og dei siste til pulje C. Ved to deltakarar pr. bane i cupen skal deltakarane fordelast i to puljer. Det skal trekkjast ein deltakar frå kvar av puljene til kvar bane.\n\nSkal det nyttast seeding i fleire enn fyrste og andre runde skal det føretakast ny rangering og inndeling i puljer som nemnt ovanfor mellom dei attværande deltakarane.\n\nVed få deltakarar i ei klasse, dvs. 6 eller færre som er kvalifisert for avsluttande kasting kan seedinga føregå slik: Best rangerte deltakar etter innleiande kasting møter svakast rangerte deltakar, nestebeste deltakar møter nest svakast deltakar, osv.",
+            "Kastar ein kastar mot feil stikke skal det kastast på nytt."
+          ]
+        },
+        {
+          "id": "r12",
+          "nummer": "12",
+          "tittel": "Stemneavvikling terminfesta stemne",
+          "punkt": [
+            "I par-kast skal \"paret\" som hovudregel stå som medlem av same klubben. To kastarar frå ulike klubbar kan danne \"par\" dersom deira respektive klubbar skriftleg godkjenner dette. Godkjenninga skal fylgje påmeldinga. I spesielle høve kan juryen godkjenne par med deltakarar frå ulike klubbar.",
+            "Terminfesta stemner skal avviklast med:\n\nA - innleiande kasting, metodar:\nRegel 40 - Seriemetoden eller\nRegel 41 - Gloppen-metoden eller\nRegel 43 - X-kast eller\nRegel 47 – Nordhordlandsmetoden (NHM)\n\nB - Evt. Mellomrunde, metode:\nRegel 42 - Dobbel Gloppen-metode\n\nC - avsluttande kasting, metodar:\nRegel 44 - Kongelagsmetoden eller\nRegel 45 - Cup-metoden eller\nRegel 47 - NHM\n\nD - Heile konkurransen blir avvikla etter regel 43 - X-kast, NHM eller SNC stemne.\n\nE - Ved bruk av pkt. B, mellomrunde, er størst antal deltakarar i avsluttande kasting avgrensa til 12.\n\nF - NM og nasjonale NC-stemner skal alltid avviklast med minst eit element av tradisjonelle metodar (sjå innleiing til regelverket). Unntak NM X-kast og NM kongelag, SNC stemner og NM hesteskogolf – sjå regel 91.6",
+            "Når eit stemne er delt inn i innleiande og avsluttande kasting, skal alle deltakarane gå vidare til avsluttande kasting.\n\nDersom deltakarane skal fordelast i grupper i den avsluttande kastinga, skal fordelinga skje slik at:\n- Flest mogleg, men minimum 50 % og maksimum 80 % av deltakarane går vidare til A-gruppa.\n- Resterande deltakarar går til B-gruppa.\n\nDersom avsluttande kasting blir gjennomført etter cupmetoden, skal flest mogleg av dei første cuprundene gjennomførast med tre deltakarar per bane.\n\nDersom det er 14 deltakarar eller færre i ei klasse, bør det ikkje delast inn i A- og B-gruppe.",
+            "I terminfesta stemne kan ein eller fleire av dei best rangerte deltakarane etter innleiande kasting få «walk over» i 1. cuprunde, dvs. den/dei er direkte kvalifisert for 2. cuprunde. Skal denne regel nyttast må det være minimum 8 deltakarar som er kvalifisert for avsluttande kasting i kvar gruppe. Det skal ikkje være fleire enn 3 deltakarar pr. gruppe som får «walk over». Juryen avgjer om regel 12.4 skal nyttast."
+          ]
+        },
+        {
+          "id": "r13",
+          "nummer": "13",
+          "tittel": "Organisering av hesteskokonkurranse",
+          "punkt": [
+            "Ved alle terminfesta stemner skal arrangøren oppnemne ein stemneleiar. Stemneleiaren er ansvarleg for at eit hestskostemne blir avvikla på ein best mogeleg og effektiv måte. Stemneleiaren har hovedansvaret for:\n- at bana er i tilfredstillande stand og at nødvendige hjelpemiddel, som for eksempel jernriver og slegger, er på plass.\n- at nødvendig informasjon, som kastnøklar, startlister osv, er lett tilgjengeleg for deltakarane.\n- at sekretæriatet har tilfredsstillande bemanning, og at det fungerer optimalt.",
+            "Ved alle terminfesta stemner skal det oppnemnast ein stemnejury som skal ha fylgjande medlemer:\nA: Leiar (oppnemnd av NHF) B: Stemneleiar C: Ein kastar, ikkje medlem av arrangørklubb, (oppnemnd av arrangør). Juryen er den høgste myndigheit på stemnet og juryen sine avgjerder er endelege.",
+            "Juryen sine oppgåver:\n1: Juryen skal sjå etter at konkurransen vert gjennomført etter NHF sitt reglement.\n2: Juryen kan gripe inn og foreta endringar i stemneavviklinga om forholda tilseier det.\n3: Godkjenne bana.\n4: Godkjenne trekning av cuprunder.\n5: Ta avgjerder i tvilstilfelle.\n6: Handsame protester.\n7: Bestemme antal kastrundar. Bestemme antal deltakarar til avsluttande kasting, og eventuell mellomrunde.\n8: Avgjere om eit stemne skal avbrytast (regel 96)\n9: Bestemme utgang for klasse 2 (regel 30.6)\n10: Kan godkjenne par etter regel 12.1\n11: Bestemme evt. w.o. 1.cuprunde (regel 12.4)\n12: Leiaren for juryen skal sende stemnerapport om arrangementet til leiarenfor NHF dersom NHF sitt regelverk ikkje er følgd, eller det har vore protestar under stemnet.\n13: Bestemme om evt. auke utgangen i finalen til 30 skårpoeng (regel 21.6)\n14: Bestemme om seeding skal nyttast i meir enn i fyrste og andre cuprunde (regel 11.11)\n15: Evt. ta avgjerder etter kapittel 7.\n16: Antal kastarar pr. kongelag og antal kongelag og evt. cuprunder (regel 44)\n17: Ta bestemmelse etter regel 30.7",
+            "Protestar skal leverast til leiaren av juryen snarast råd og seinast 15 min. etter at resultata er kunngjort. Ved klare arrangørfeil er ikkje protestfristen tidsavgrensa. Protestar må likevel vere innleverte i så god tid at stemnet ikkje vert unødig seinka. Protestar som er levert i rett tid skal handsamast av juryen snarast. Funksjonærar og deltakarar som er direkte involvert skal uttale seg før juryen tek si avgjerd."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kap2",
+      "tittel": "Kapittel 2 - døming, poenggjeving",
+      "reglar": [
+        {
+          "id": "r20",
+          "nummer": "20",
+          "tittel": "Døming, generell",
+          "punkt": [
+            "Arrangøren kan pålegge kastarane å dømme, og å notere poeng på utdelte startkort. I terminfesta stemner skal det være banedomarar i finalane i A gruppa.",
+            "Ved sjølvdømming kan kastarar under 15 år ha med seg ein representant som ivaretek deira interesse.",
+            "Dersom kastarane ikkje er samde om fordeling av skårpoeng skal juryen eller ein annan erfaren kastar avgjere.",
+            "Dersom ein sko vert slegen sund under kasting, kan det kastast ein ny sko. Vert det kasta med feil sko skal det kastast på nytt, dersom ikkje dei involverte deltakarane blir einige om å godta kastresultatet som det er.",
+            "Kastarane skal ikkje ta opp skorne før fordeling av skårpoengpoeng er fastsett. Dersom ein sko som kunne gje poeng vert flytta på før skårpoenga er dømde, gjeld følgjande regel:\n1. Skoen skal kastast på nytt dersom ein tredje person har flytta skoen.\n2. Den deltakaren som har flytta skoen i ein slik situasjon får ikkje poeng."
+          ]
+        },
+        {
+          "id": "r21",
+          "nummer": "21",
+          "tittel": "Skårpoeng. (Tradisjonell)",
+          "punkt": [
+            "Alle sko som ligg rundt stikka (ring) gjev 3 skårpoeng. Dvs. ein må kunne trekke ei rett linje mellom endane på skoen, linja kan tangere stikka.",
+            "Ligg ingen av skorne rundt stikka når alle har kasta, vil den skoen som ligg nærmast stikka telje 1 skårpoeng.",
+            "Dersom ingen av kastarane har kasta ein sko rundt stikka, og det ikkje er muleg å skilje kven av skorne som er nærmast stikka, skal neste beste sko telje. Dersom det også er umuleg å skilje disse, vil kvar kastar få 1 skårpoeng.",
+            "Dersom ein deltakar har 2 sko som gjev høgre skårverdi enn beste sko til motstandar, gjev begge skorne skårpoeng.",
+            "Den deltakaren som først når 21 skårpoeng (utgang) eller meir har vunne kampen. Ved lik skårpoeng på 21 eller meir er det uavgjort kamp.",
+            "I finalen kan likevel juryen auke utgangen til 30 skårpoeng."
+          ]
+        },
+        {
+          "id": "r22",
+          "nummer": "22",
+          "tittel": "Kamppoeng, rangering (Tradisjonell)",
+          "punkt": [
+            "Kampoppsett, to deltakarar pr. bane: Vinnaren av kvar kamp får 2 kamppoeng. Taparen får 1 kamppoeng dersom vedkomande har oppnådd 11 i skår. Oppnår ikkje taparen denne skåren får vedkomande 0 kamppoeng. Ved uavgjort kamp får kvar av deltakarane 1,5 kamppoeng.",
+            "Kampoppsett, tre deltakarar pr. bane: Vinnaren av kvar kamp får 2 kamppoeng. Nr. 2 får 1 kamppoeng. Nr. 3 får 0 kamppoeng. Ved lik skår deler deltakarane kamppoenga. På dei baner det evt. er berre to deltakarar, får vinnaren 2 kamppoeng og taparen får 1 kamppoeng.",
+            "Etter innleiande kasting og evt. mellomrunde skal deltakarane rangerast etter oppnådde kamppoeng. Er kamppoenga like for to eller fleire deltakarar skal disse rangerast innbyrdes etter eigenskår. Er også eigenskåren lik, tel evt. innbyrdes oppgjer. Ved bruk av seriemetoden skal rangeringa skje innan kvar serie.\n\nHar ikkje deltakarane møttes innbyrdes, går den føre som har høgast skår i enkelt kamp, er også den lik, tel nestbeste resultat osv.\n\nEr det tre eller fleire deltakarar som står likt, fell bestemmelsane om innbyrdes oppgjør bort.",
+            "Deltakarar som har hatt w.o. vil få 2 kamppoeng og 21 skårpoeng.\n\nI lagkonkurransar får laga gjennomsnittet av både kamppoeng og skår ved W.O"
+          ]
+        },
+        {
+          "id": "r23",
+          "nummer": "23",
+          "tittel": "Poenggjeving (andre metodar)",
+          "tekst": "Poengverdien for kvar deltakarar vert fastsett etter kvar omgang. Alle skorne i kvar omgang tel i poengsamandraget for kvar deltakarar. Fylgjande poengskala skal nyttast:\nRing, jmf. regel 21.1 = 5 poeng\nSko mellom 0 cm - 5 cm frå stikka = 3 poeng\nSko mellom 5 cm - 20 cm frå stikka = 2 poeng\nSko mellom 20 cm - 50 cm frå stikka = 1 poeng\nAvstanden skal målast frå stikka til næraste punkt på skoen."
+        }
+      ]
+    },
+    {
+      "id": "kap3",
+      "tittel": "Kapittel 3. Klasser",
+      "reglar": [
+        {
+          "id": "r30",
+          "nummer": "30",
+          "tittel": "Klasser og definisjonar",
+          "punkt": [
+            "Ein hesteskokonkurranse kan ha følgjande klasser: Klasse 1, klasse 2 og juniorklasse. I hesteskogolf skal det være dame-klasse og herre-klasse.",
+            "Definisjonar: Klasse 1 er ei open klasse både for damer og herrar. Klasse 2 er ei open klasse for nybyrjarar og elles andre som den enkelte klubb meiner ikkje er kvalifisert for klasse 1. Juniorklassa er for kastarar under 14 år.\n\nKastarar i klasse 2 og juniorklassa kan delta i høgare klasse, men kan då ikkje gå tilbake til lavare klasse same sesongen utan godkjenning frå NHF.",
+            "Norgesmeistrar skal berre kårast i A-gruppene. Det skal ikkje kårast Norgesmeistrar i klasse 2 og juniorklassa.",
+            "Distriktsmeistrar skal kårast i klasse 1 og klasse 2. For å bli kåra som distriktsmeister må vedkomande kome frå ein klubb i det distriktet der meisterskapen blir arrangert.",
+            "NC samanlagt gjeld berre for klasse 1 og klasse 2.",
+            "Juryen kan senke utgangen til min. 15 skårpoeng i klasse 2. I juniorklassae kan kastavstanden være under 10 meter og utgangen setjast lavare enn 21 skårpoeng. Arrangøren bestemmer.",
+            "Dersom det er få kastarar i kl. 2 i eit stemne, kan juryen bestemme at kl. 2 kastarane kan kaste saman med kl. 1 kastarane. Under innleiande kasting får kl. 2 kastarane ein bonusskår på 8 skårpoeng (sp) når dei møter ein kl. 1 kastar, dette gjeld når innleiande kasting blir avvikla med 2 kastarar pr. stikke og også når heile stemnet blir avvikla etter Nordhordlandsmetoden. Dersom avsluttande kasting blir avvikla etter cupmetoden skal kl.2 kastarane plasserast i B-gruppa. Kl.2 kastarane kan ikkje få w.o i første runde. Bonusskår gjeld ikkje under avsluttande kasting. Klasse 2 kastarane vil ikkje miste sine NC-poeng og vil framleis kunne konkurrer i kl.2."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kap4",
+      "tittel": "Kapittel 4. Metodar for avvikling av stemner.",
+      "innleiing": "Norges-Cupstemner og Norgesmeisterskap skal arrangerast etter gjeldande reglar. I andre terminfesta stemner kan ein avvike frå regelverket når det gjeld stemneavvikling. Eventuelt avvik frå regelverket skal vere godkjent av NHF. Det skal også opplysast i innbydinga kva avvik som vil bli gjort. For klasse 2 og juniorklassa kan arrangøren avvike frå regelverket når det gjeld stemneavvikling utan godkjenning frå NHF.",
+      "reglar": [
+        {
+          "id": "r40",
+          "nummer": "40",
+          "tittel": "Seriemetoden. (innleiande kasting)",
+          "punkt": [
+            "Ved trekning vert deltakarane inndelt i seriar på inntil 14 deltakarar.",
+            "Ved stor deltaking kan ein dele deltakarane i 2 eller fleire puljar med ulik starttid.",
+            "Alle deltakarar i ein serie kastar mot alle andre i serien, to og to mot kvarandre.",
+            "Ved forfall skal ein, før konkurransen startar, fylle opp dei ledige plassane med etteranmelde, deretter deltakarar frå den siste serien så langt dette er praktisk gjennomførleg."
+          ]
+        },
+        {
+          "id": "r41",
+          "nummer": "41",
+          "tittel": "Gloppen-metoden. (innleiande kasting)",
+          "punkt": [
+            "Deltakarane får fortløpande startnummer etter påmeldinga, eller arrangøren fordeler startnummera ved trekning.",
+            "Arrangøren avgjer om konkurransen skal avviklast med 2 eller 3 deltakarar pr. bane. Antalet kan variere frå klasse til klasse - gruppe til gruppe. Banefordelinga skal trekkast, eller ein kan nytte NHFs ferdigtrekte kastnøklar.",
+            "Det skal kastast til første deltakar når 21 skårpoeng (utgang) eller meir. Kampen er då slutt. (sjå regel 21.5)",
+            "Deltakarane fører sjølve sitt eige startkort. Motstandarane i kvar kamp skal kontrollere at noteringane er rette, og kvittere med startnummer, eigenskår og signatur."
+          ]
+        },
+        {
+          "id": "r42",
+          "nummer": "42",
+          "tittel": "Dobbel Gloppen-metode ( 2GM) (mellomrunde)",
+          "punkt": [
+            "I tillegg til innleiande kasting, blir Gloppen-metoden også nytta i mellomrunda.",
+            "Etter innleiande kasting går deltakarane til mellomrunde, fordelt til A- og B- gruppe i samsvar med regel 12.3.",
+            "Deltakarane tek med seg halvparten av kamppoenga og halvparten av totalskåren frå innleiande kasting til mellomrunda. (evt. desimalar i skåren skal strykast)",
+            "Antal deltakarar pr. bane i mellomrunda kan være ulikt frå gruppe til gruppe. Antal deltakarar pr. bane kan være ulikt i innleiande kasting og i mellomrunda. Antal kastrunder i innleiande kasting og mellomrunda bør være mest mogeleg like."
+          ]
+        },
+        {
+          "id": "r43",
+          "nummer": "43",
+          "tittel": "X - kast (kombinert metode)",
+          "punkt": [
+            "DEFINISJONAR:\n\nAntal sko: Kvar deltakar skal nytte 4 sko under ein X-kast konkurranse.\n\nOmgang: Ein omgang består av 4 kast. Skorne skal kastast etter kvarandre.\nRunde: Ei runde består av 5 omgangar. Deltakarane skal kaste dei 5 omgangane etter kvarandre.\n\nRotasjon: Ein rotasjon vil seie at alle deltakarane i ein serie har kasta ei runde.\nSerie: Ein serie betyr dei deltakarane som kastar på same kastbane.\nKastbane: Ei kastbane er der deltakarane i ein serie kastar, jmf. regel 10.3",
+            "Ein X-kast konkurranse består av 10 runder: Heilmatch, 5 runder: Halvmatch, eller 3 runder: Minimatch.",
+            "Ein serie skal bestå av 2-4 deltakarar.",
+            "Kvar deltakar har rett på maksimum 4 prøvekast før kvar runde",
+            "Dei andre deltakarane i serien skal fastsetje, kontrollere og notere poenga for den deltakaren som til kvar tid kastar i serien. Deltakarane i serien kan ikkje sette andre til å notere poeng for dei. Dette kan kun unntaksvis godkjennast av juryen.",
+            "Arrangøren avgjer: (regelen ble opphevet i 2021)\na: om det skal være baneforflytting etter ein eller fleire rotasjonar.\nb: om det skal vere finalekasting",
+            "Har to eller fleire deltakarar oppnådd same poeng, går den føre som har flest ringer, er dette likt tel beste beste «enkeltrunderesultat», er dette likt, tel neste beste resultat osv.",
+            "Det skal kastast fram og tilbake.",
+            "Det skal teljast og registrerast tal ringar i samsvar med regel 48, NR"
+          ]
+        },
+        {
+          "id": "r44",
+          "nummer": "44",
+          "tittel": "Kongelagsmetoden (avsluttande kasting)",
+          "punkt": [
+            "Kvar deltakar skal nytte 4 sko som skal kastast etter kvarandre.",
+            "Det skal være ein deltakar pr. bane.",
+            "Det bør ikkje være meir enn 12 deltakarar pr. kongelag. Det kan avviklast kongelagskasting innan alle klasser/grupper. Juryen bestemmer antal kastarar pr. kongelag, og kor mange kongelag pr. klasse/gruppe.",
+            "Juryen bestemmer om det skal avviklast cuprunde(r) eller ikkje før det blir avvikla kongelagskasting.",
+            "Det skal avviklast 10 kastomgangar. Det kan leggast inn rotasjon etter 5., 7. og 9. omgang.",
+            "Overdomar for kvart kongelag skal gje ordre når kastinga for kvar omgang kan starte.",
+            "Poengstillinga for kvar deltakar skal opplysast etter min. 5., 7. og 9. omgang",
+            "Det skal være domarar som fastset poengverdien for kvar deltakar.",
+            "Kamppoenga oppnådd under innleiande kasting skal leggast til poenga oppnådd under kongelagskastinga for kvar deltakar.",
+            "Dersom to eller fleire deltakarar har lik poengsum etter Kongelagskastinga, dvs. etter at poenga frå innleiande kasting er lagt til, går den føre som har best resultat i Kongelagskastinga. Er dette likt tel flest ringer i kongelaget, er dette likt tel beste enkeltomgangsresultat osv.",
+            "Dersom X-kast er brukt som innleiande kasting skal følgjande prosenter: Minimatch: 33,33%, Halvmatch: 20%, Heilmatch: 10% av poenga leggast til poenga oppnådd under kongelagskastinga for kvar deltakar. Poenga skal avrundast til næraste heile tal. OBS sjå regel 12.2.F.",
+            "Det skal teljast og registrerast tal ringar i samsvar med regel 48, NR.",
+            "NM-KONGELAG (Forslag frå Skjold HK, vedtatt på leiarmøtet 2023.)\n\nAlle får tildelt eit tilfeldig startnummer. Nr.1 står på bane 1 i første kongelag på 12 stk. Start nr.13 på bane 1 i andre kongelag osb. Når alle kongelag er unnagjort har vi so ei endeleg resultatliste frå nr.13 og nedover. Dei 12 kastarane med best resultat går til eit nytt kongelag. Vinnaren og Norgesmeister er den som står med høgast poengsum, summen av begge kongelag. Alle kongelag skal gjennomførast etter regelverket, men det siste kongelaget må vere med både rokkering og resultatopplesing under vegs. Antall kastarar i kvart kongelag skal i utgangspunktet vere 12 stk, men juryen kan her gjere avik når det er naturleg. For eks ved 40 deltakarar, 13 x 2 + 14, eller 10 x 4. Også at det kan gå 13 til siste kongelag når 12 plassen er delt."
+          ]
+        },
+        {
+          "id": "r45",
+          "nummer": "45",
+          "tittel": "CUP (avsluttande kasting)",
+          "punkt": [
+            "I cup kastar 2 eller 3 deltakarar pr. bane. Taparen i ein kamp går ut av konkurransen.",
+            "Ein held fram med kastinga til det står att 2 deltakarar som kastar finale. Dei tapande i semifinalane skal kaste om plassane etter finalistane.",
+            "Det skal ikkje være meir enn ein deltakar som vert utslegen i kvar kamp.",
+            "Arrangøren har høve til å arrangere finalen som best av inntil tre kampar.",
+            "I cup-kasting må ein vinne med minimum 2 skårpoeng. Med tre deltakarar på bana, der 2 av 3 går vidare, har den deltakaren vunne som først når 21 skårpoeng eller meir, og har 2 skårpoeng eller meir til deltakar nr. 3, Dei to siste deltakarane held fram og kastar til den eine deltakaren når 21 skårpoeng eller meir og har 2 skårpoeng eller meir til den andre deltakaren.",
+            "Deltakarar som blir utslegne i cupen før semifinalane skal runde for runde rangerast etter kamppoeng og skår etter innleiande kasting.(Sjå regel 21.6 ang.utgang i finale)"
+          ]
+        },
+        {
+          "id": "r46",
+          "nummer": "46",
+          "tittel": "Hesteskogolf",
+          "punkt": [
+            "Hesteskogolf skal føregå i ei løype som ligg i variert terreng/grusbane. I løypa skal det plasserast kaststikker som det skal kastast mot i ei bestemt rekkefølge. Mellom ein del av UP og kaststikkene skal det plasserast hinder av ymse slag. Det skal være variert avstand mellom UP og stikkene.",
+            "Fyrste kastet mot ei stikke, utgangskastet (UK), skal føregå frå utgangspunktet (UP) som kan være siste stikke ein har kasta mot, eller eit punkt arrangøren bestemmer. Der skoen blir liggande skal neste kast utførast frå, osv.",
+            "Det skal kastast mot same stikka til det blir oppnådd \"ring\", jmf. regel 21.1.",
+            "Det skal gjennomførast eit på førehand bestemt antal runder i løypa. Den som har oppnådd færrast kast samanlagt har vunne konkurransen.",
+            "Har to eller fleire kastarar likt tal kast går den føre som har best enkeltrunderesultat. Er dette likt tel nest beste enkeltrunderesultat osv.\n\nEr det framleis likt får dei involverte kastarane delte plasseringar.\n\nDelte plasseringar gjeld likevel ikkje for plasseringane 1, 2 og 3. Er det likt mellom to eller fleire av disse, går den føre som har flest ringar på fyrste kast. Er det framleis likt tel flest ringar på andre kast osv. Er det framleis likt skal disse i så fall kaste mot tre og tre stikker til kastarane kan skiljast. Juryen bestemmer på kva stikker det skal kastast mot ved omkast.",
+            "Antal runder: 2-4 runder (alle runder tel i poengsamandraget)\nAntal stikker: Min. 9 stk. max. 18 stk.\nAvstanden frå UP og til stikka: Min. 5 m. max. 25 m.\nHestesko som skal nyttast: Norsk standard, regel 10.1\nPoenggjeving: Antal kast som må utførast til ring blir oppnådd.\nStikker: Norsk standard, regel 10.3",
+            "Området rundet stikkene, diameter minimum 0,5 m, bør være tilnærma flatt.",
+            "3-4 kastarar går saman på runda og dømmer og fører startkort for kvarandre.\n\nKastarane byter på å utføre fyrst kast mot stikkene, andre kastet utføres fyrst av den som etter fyrste kastet har skoen nærmast stikka, vedkomande kastar skoen til det er oppnådd \"ring\". Når det er oppnådd \"ring\" skal skoen fjernast umiddelbart.",
+            "Skorne skal kastast på vanleg måte (underhandskast med ei hand). Kroppsrotasjon er forbudt.",
+            "Deltakarane nyttar to sko. Etter at kastaren har utført første kast mot ei stikke, skal neste kast utførast frå der skoen ligg. Kastaren skal då stå rett bak første skoen med fremste fot og utføre nest kast osv.",
+            "I Norgesmeisterskap skal det kastast mot minimum 36 stikker."
+          ]
+        },
+        {
+          "id": "r47",
+          "nummer": "47",
+          "tittel": "Nordhordlandsmetoden (NHM) – (kombinert metode)",
+          "merknad": "Veiledninger og startkort til NHM kan ein finne på forbundet sine internettsider",
+          "punkt": [
+            "Det skal være 2 deltakarar pr. bane. Startlistene skal trekkast når påmeldingane er klar. Startkorta skal ikkje utleverast før startlistene er klare.",
+            "Startnummer (SN) 1 møter SN 2 i første runde på bane 1, SN 3 møter SN 4 på bane 2 osv. Er det påmelde deltakarantal oddetal, får deltakaren med høgast SN w.o. i første runde. Kampane startar nå sekretariatet gjev klarsignal.",
+            "Poengberekning som i regel 22.1. Deltakarar med w.o. poengberekning som i regel 22.4.",
+            "Det bør avviklast minst så mange runder at det teoretisk kun kan være ein deltakar med full poengpott.",
+            "Startkorta skal etter kvar runde leverast ferdig utfylt, summert og signert til sekretariatet for kontroll og rangering.",
+            "I dei påfølgande runder skal best rangerte etter kamppoeng (KP) og skårpoeng (SP), og dersom likhet, etter lavast SN, kaste på bane nr. 1 mot nestbest rangerte osv. Er deltakarantalet oddetal får lavast rangerte deltakar w.o. Ingen deltakar kan ha meir enn 1 w.o. pr. konkurranse. Har lavast rangerte allereide hatt w.o. i konkurransen er det nest lavast rangerte som får w.o. osv.",
+            "Ingen deltakarar kan møtast meir enn ein gong pr. konkurranse v/ NHM. Dersom to deltakarar som iflg. regel 47.6 skulle ha møttest, og som har møtt kvarandre i tidlegare runde, må ein gå vidare nedover i rankinglista for å finne fram til dei rette motstandarane.",
+            "Sluttrangeringa skal skje etter regel 22.3",
+            "Avsl. kasting etter NHM: Ved bruk av NHM som avsluttande kasting skal det nyttast seeding i første runde. Best rangerte deltakar møter lavaste rangerte i si gruppe på bane 1 osv. I dei vidare rundene blir rundeoppsettet som i regel 47.6.",
+            "Er deltakarantalet slik av det ved avsluttande kasting må bli oddetal i ei gruppe skal dette være i gruppe B, best rangerte deltakarar får då w.o. i første runde."
+          ]
+        },
+        {
+          "id": "r48",
+          "nummer": "48",
+          "tittel": "Norgesranking (NR)",
+          "punkt": [
+            "NR er ei årleg rangering der kastarane blir rangert i prosent ringar (regel 21.1) i dei stemna som er godkjent som NR-stemne/rankingrunder.",
+            "NR kan arrangerast lokalt i klubbane, eller i samband med dei terminfesta stemna til NHF.",
+            "Arrangørar av lokale NR-stemne skal seinast dagen før stemnet melde frå til NHF (minst eit av styremedlemene) og til NC-koordinator.",
+            "Ved lokale NR-stemne skal kastarane kaste 100 kast pr. rankingrunde. I konkurransar med X-kast eller Kongelag er tal kast det som er bestemt for disse konkurranseformene.",
+            "To (evt.tre) kastarar pr. bane. Ein kastar, ein (to) fastset og noterer tal ringar. Kastarane på kvar bane byter på å kaste etter kvar 5. omgang. Jmf. regel 43.1.",
+            "Kastarane skal nytte 4 sko, og det skal kastast fram og tilbake. Jmf. regel 43.8.",
+            "Det skal være minst 6 -seks- kastarar med på kvart stemne for å få godkjent NR-resultat.",
+            "Styret i NHF fastset årleg kor mange rankingrunder som er teljande i årsresultatet, og kor mange rankingrunder kastarane må gjennomføre for å få teljande årsresultat.",
+            "Dei tre som har best årsresultat skal premierast av NHF. Premieringa skal skje på eit av dei fyrste NM eller NC stemna året etter.",
+            "Resultata frå NR-stemna skal sendast NHF v/ NC-koordinator. NC-koordinator skal kvar månad kunngjer ei mellombels rankingliste.",
+            "Det er to skjema som skal nyttast i samband med NR: Det eine skal nyttast ved kastinga. Det andre, som er eit samleskjema, skal nyttast til innsending av resultata til NHF. Ved X-kast og Kongelag konkurransar skal tal ringar noterast på startkorta, som må være tilpassa NR. Tal ringar skal førast på resultatlistene frå stemnet og sendast NC-koordinator.",
+            "Det skal årleg oppsettast ei rankingliste, årsresultatet, over dei som har godkjente NR-resultat. Lista skal kunngjerast i handboka komande år, og evt. på ein annan hensiktsmessig måte."
+          ]
+        },
+        {
+          "id": "r49",
+          "nummer": "49",
+          "tittel": "SNC i Norgescupen. rev1-2025",
+          "tekst": "SNC avvikles etter følgende rammebetingelser:\n\n• Terminfestes på NHF sin terminliste med øvrige stevner.\n\n• SNC skal settes opp for avvikling på ukedager, ikke i helger. Unntak gjelder for NM-stevner (NM X-kast og NM Kongelag).\n\n• Stevnene arrangeres lokalt av klubbene eller NHF (NM). Flere klubber kan arrangere stevnet sammen hvis dette er ønskelig/formålstjenlig. Minimumskrav til antall deltagere lokalt er 6 kastere. Oppnås ikke minimumskravet kan stevnet ikke godkjennes som SNC.\n\n• Hvert stevne arrangeres på samme dato, med samme kastmetode og stemnestart mellom kl. 17 og 19. Unntak gjelder for NM og X-kast og NM Kongeleg.\n\nNM X-kast kan benyttes som tellende i SNC. Dette besluttes av NHF i forbindelse med utarbeidelse av terminlisten\n\nNM Kongelag kan benyttes som tellened SNC. Dette besluttes av NHF i forbindelse med utarbeidelse av terminlisten. Det er kun den delen av konkurransen som er åpen for alle kasterne som kan være tellende i SNC. Dette betyr at slik NM Kongelag avvikles pr.2025 så er det kvalifiseringen som er tellende i og med at det kun er begrenset antall kastere som kaster finale i Kongelaget.\n\n• Resultatene fra kastingen lokalt innrapporteres på forbundets resultatliste for SNC senest kl. 18:00 påfølgende dag. Offisiell resultatliste skal normalt være publisert innen kl. 20:00.\n\n• Arrangør SKAL på forespørsel ta bilde av startkort og sende til NC-koordinator.\n\n• De lokale resultatlistene flettes sammen til en nasjonal resultatliste.\n\n• Denne nasjonale resultatlisten skal være innrapporteringsgrunnlaget for Norgescupen.\n\n• Poengmessig plasseres SNC mellom DNC og NC, det vil si med 300 poeng til vinner.\n\n• Antall SNC stevner som skal arrangeres i løpet av en sesong besluttes av NHF, det samme med hvor mange av denne varianten som kan telle i Norgescupen (i tillegg til DNC og NC).\n\n• NHF sine regler skal som alltid følges i forhold til avviklingen.\n\nKun følgende kastemetoder kan velges (besluttes av NHF ved oppsett av terminliste):\nAlternativ 1: X-kast minimatch og kongelag\nAlternativ 2: X-kast halvmatch og kongelag\nAlternativ 3: X-kast helmatch\nAlternativ 4: X-kast halvmatch og X-kast helmatch\n\nVed alternativ 1 og 2 (X-kast minimatch og kongelag eller X-kast halvmatch og kongelag) gjelder følgende regler:\n\nA. Gjennomføringen av den innledende minimatchen eller halvmatchen foregår som beskrevet i håndboken om metoden.\n\nB. Startnummer skal settes opp etter rangeringen fra foregående års Norgescup.\n\nC. Når alle kasterne har fullført innledende kasting, skal startkort leveres inn i sekretariatet for kontroll av poengsummer. På grunnlag av dette skal kasterne rangeres fra høyest til lavest poengsum etter gjeldende regler for X-kast. Så skal de som er best etter innledende kasting alltid kaste i det siste kongelaget, med den som er høyest rangert på bane 1, nr. 2 på bane 2 osv.\n\nD. Deretter gjennomføres kongelaget som avsluttende kasting. Kasteren med høyest rangering (poengsum) etter innledende kasting skal ha fordelen av å kaste på bane 1 i det siste kongelaget, kaster nr. 2 etter innledende kasting på bane 2 osv. Gjennomføringen av kongelaget skal være identisk til slik kongelag ellers gjennomføres, men med ett unntak; kasterne måler/noterer resultat på samme måte som ved X-kast, altså måler og noterer de for hverandre. Det er viktig å understreke at all kasting skal skje på kommando som ved ordinær kongelagsavvikling.\n\nE. Ein prosentdel fra X kast innledende, (ref. regelendring i 2024: «44.11 Minimatch: 33,33%, Halvmatch: 20%, Heilmatch: 10%», avrundes til næraste heile tal) skal legges til poengene som oppnås under kongelagskastingen for hver deltaker. Ved poenglikhet skal kongelaget ligge til grunn for å skille kasterne etter reglene beskrevet i håndboken for avviklingsmetoden.\n\nF. Følgende resultat skal rapporteres til NC-koordinator:\n▪ Kongelagsresultatet pr kaster (inkl. poengsum fra innledende) skal være tellende i Norgescupen (SNC). På resultatlisten skal kongelagsresultatet både med og uten poeng fra innledende legges inn.\n▪ Resultatene fra X-kast og kongelaget skal være tellende i Norgesranking\n▪ Adelskalenderen skal oppdateres med personlige bestenoteringer for de som oppnår det.\n\nVed alternativ 3 (X-kast helmatch) gjelder følgende regler:\n\nG. Gjennomføringen av helmatchen foregår som beskrevet i håndboken om metoden.\n\nH. Startnummer skal settes opp etter rangeringen fra foregående års Norgescup.\n\nI. Følgende resultat skal rapporteres til NC-koordinator:\n▪ X-kast helmatch resultat pr kaster skal være tellende i Norgescupen (SNC).\n▪ X-kast helmatch resultat skal være tellende i Norgesranking.\n▪ Adelskalenderen skal oppdateres med personlige bestenoteringer for de som oppnår det.\n\nVed alternativ 4 (X-kast halvmatch og X-kast helmatch) gjelder følgende regler:\n\nJ. Gjennomføringen av den innledende halvmatchen og den avsluttende helmatchen foregår som beskrevet i håndboken om metodene.\n\nK. Startnummer i halvmatchen skal settes opp etter rangeringen fra foregående års Norgescup.\n\nL. Når alle kasterne har fullført halvmatchen, skal startkort leveres inn i sekretariatet for kontroll av poengsummer. På grunnlag at dette skal alle kasterne rangeres fra høyest til lavest poengsum etter gjeldende regler for X-kast. Så skal den som er best etter halvmatchen stå på bane 1 i helmatchen sammen med den som var nest best, så nr.3 og 4 på bane 2 osv.\n\nM. Deretter gjennomføres helmatchen som avsluttende kasting. Kasteren med høyest poengsum (rangering) etter halvmatchen skal ha fordelen av å kaste sist på sin bane i helmatchen. Gjennomføringen av helmatchen skal være identisk til slik helmatch ellers gjennomføres, altså måler og noterer kasterne for hverandre.\n\nN. Ein prosentdel fra X kast innledende, (ref. regel: «44.11 Minimatch: 33,33%, Halvmatch: 20%, Heilmatch: 10%», avrundes til næraste heile tal) skal legges til poengene som oppnås under kongelagskastingen for hver deltaker. Ved poenglikhet skal kongelaget ligge til grunn for å skille kasterne etter reglene beskrevet i håndboken for avviklingsmetoden..\n\nO. Følgende resultat skal rapporteres til NC-koordinator:\n▪ X-kast helmatch resultat pr kaster (inkl. poengsum fra innledende) skal være tellende i Norgescupen (SNC). På resultatlisten skal helmatch resultatet både med og uten poeng fra innledende legges inn.\n▪ X-kast halvmatch og helmatch resultat skal være tellende i Norgesranking.\n▪ Adelskalenderen skal oppdateres med personlige bestenoteringer for de som oppnår det.\n\nVeiledninger, startkontingent, premiering og NC poeng:\n\nAlle klubbar som arrangerer stemne lokalt i SNC melder frå på mail til NC-koordinator seinast 3 dagar før stemnedato, dette slik at NC-koordinatoren har oversikt om kor mange resultatlister som forventes inn før endelig sammenlagt liste kan settes opp og offentliggjøres. I same mail oppgis det navnet og mobilnummeret på den lokale stemnelederen, samt informasjon om kven (navn-mobil-epost) som er ansvarlig for innsending av resultatlista til NC-koordinatoren i samsvar med regelverket for SNC.\n\nArrangør klubben kan ta inn startkontingent av deltakerne som i andre NC/DNC stemner (p.t. kr. 200,-). Arrangørklubbane betaler inn stemne og NC avgift til NHF i samsvar med handboka. (p.t. kr.40 + kr.30).\n\nDet skal være ein lokal stemnejury som ser til at aktuelle punkter i Regel 13: Organisering av hesteskokonkurranse følges.\n\nKlubbane premierer minimum dei 3 beste i kvar klasse lokalt.\n\nNHF premierer etter kvart SNC stemne med pengepremier slik:\nKL1: 1.plass kr. 500,- 2. plass kr. 300,- 3.plass kr. 200,-\nKL2: 1.plass kr. 300,- 2.plass kr 200,-\n\nNHF ved NC-koordinatoren trekker ut pengepremiene a kr. 200,-til 10% (nedrundet) blant samtlige deltakere på nasjonal resultatliste i kvart SNC stemne. På den nasjonal resultatlista etter kvart SNC-stemne markeres vinnerene av pengepremiene.\n\nAlle premiepengene overføres av kassereren i NHF til kontoene til vinnerene etter kvart SNC stemne. Vinnerene av pengepremiene må informere kassereren i NHF om konto nummeret pengene skal overføres til snarast etter at resultatlista er publisert.\n\nDersom NM X-kast og NM Kongelag benyttes som tellende i SNC så skal premieringen av disse to mesterskapene følgje NHF sin normale premiering av NM og ikkje etter reglene for SNC-premiering.\n\nForbundet v/styret bestemmer årlig kor mange av dei arrangerte SNC stemna som kan telle i norgescupen og størrelsene på pengepremiene.\n\nI forbindelse med avvikling av SNC stemne, kan det være at det er konflikt med enkelte regler i handboka for avvkling av tradisjonelle stemner. I slike konfliktsituasjoner er det teksten i Regel 49 SNC som gjeld. Unntak gjelder fo NM Kongeleg (regel 44) dersom dette er tellende i SNC."
+        }
+      ]
+    },
+    {
+      "id": "kap5",
+      "tittel": "Kapittel 5. Reglar for Norges-cup singel og NM lag.",
+      "reglar": [
+        {
+          "id": "r50",
+          "nummer": "50",
+          "tittel": "Norges-cup",
+          "punkt": [
+            "Norges-Cupen (NC) er ein årleg samanlagtkonkurranse singel, der dei beste plasseringane i dei på førehand bestemte NC-stemna tel i samandraget for den enkelte deltakar.",
+            "Kastarar i klasse 2 (og juniorklassa) kan delta i klasse 1. Dersom skifte av klasse skjer i løpet av sesongen skal vedkomande sine NC-poeng i klasse 2 strykast, utan at det får innverknad på NC-poenga for dei andre i klasse 2. Får ein klasse 2 kastar løyve til å gå tilbake til klasse 2 i løpet av sesongen skal vedkomande sine NC-poeng i klasse 1 strykast utan at det får innverknad på NC-poenga for dei andre i klasse 1.",
+            "Inntil 60 deltakarar i kvar klasse skal ha NC-poeng i kvart stemne.",
+            "For å sette opp samanlagt resultatliste for Norges-cupen vert det utdelt poeng til dei beste i kvart stemne slik:\nnr. 1 400 poeng  nr. 16 216 poeng  nr. 31 104 poeng  nr. 46 34 poeng\nnr. 2 380 poeng  nr. 17 206 poeng  nr. 32 98 poeng   nr. 47 30 poeng\nnr. 3 364 poeng  nr. 18 198 poeng  nr. 33 92 poeng   nr. 48 26 poeng\nnr. 4 350 poeng  nr. 19 190 poeng  nr. 34 86 poeng   nr. 49 24 poeng\nnr. 5 336 poeng  nr. 20 182 poeng  nr. 35 80 poeng   nr. 50 22 poeng\nnr. 6 324 poeng  nr. 21 174 poeng  nr. 36 74 poeng   nr. 51 20 poeng\nnr. 7 312 poeng  nr. 22 166 poeng  nr. 37 70 poeng   nr. 52 18 poeng\nnr. 8 300 poeng  nr. 23 158 poeng  nr. 38 66 poeng   nr. 53 16 poeng\nnr. 9 288 poeng  nr. 24 150 poeng  nr. 39 62 poeng   nr. 54 14 poeng\nnr. 10 276 poeng nr. 25 142 poeng  nr. 40 58 poeng   nr. 55 12 poeng\nnr. 11 266 poeng nr. 26 134 poeng  nr. 41 54 poeng   nr. 56 10 poeng\nnr. 12 256 poeng nr. 27 128 poeng  nr. 42 50 poeng   nr. 57 8 poeng\nnr. 13 246 poeng nr. 28 122 poeng  nr. 43 46 poeng   nr. 58 6 poeng\nnr. 14 236 poeng nr. 29 116 poeng  nr. 44 42 poeng   nr. 59 4 poeng\nnr. 15 226 poeng nr. 30 110 poeng  nr. 45 38 poeng   nr. 60 2 poeng\n\nDistrikt Norges Cup stemne gjev 50 % av overståande skala.",
+            "Styret bestemmer kor mange NC-stemner, nasjonale NC-stemner (NC) og distrikt NC-stemner (DNC) som skal arrangerast kvart år.\n\nStyret bestemmer også kor mange stemner som skal telje i sluttsamandraget.",
+            "Styret bestemmer kor mange DNC-stemner det skal arrangerast i kvart distrikt.\n\nDei fire distrikta er samansette slik:\nDistrikt I Sør- og Austlandet (Aust-Agder, Buskerud, Østfold, Oppland, Vest-Agder, Hedmark, Vestfold, Telemark, Akershus og Oslo)\nDistrikt II Sør-Vestlandet (Rogaland og Hordaland)\nDistrikt III Nord-Vestlandet (Sogn og Fjordane og Møre og Romsdal)\nDistrikt IV Sør-Trøndelag, Nord-Trøndelag, Nordland, Troms og Finnmark.\n\nOBS: Alle DNC-stemne er opne for kastarar frå alle distrikt !",
+            "Ved lik samanlagtpoengsum skal beste enkeltresultat telje, og er beste enkeltresultat likt tel nestbeste osv.",
+            "Styret skal oppnemne ein kontaktperson for Norges-cupen som er ansvarleg for utrekning av resultatlise for Norges-cupen etter kvart stemne. Arrangør av Norgescupstemne skal sende ei resultatliste til kontaktpersonen. Vedkomande skal sørge for at Norges-cupen til kvar tid er oppdatert ppå NHF sine heimesider, og at aktuelle media blir informert."
+          ]
+        },
+        {
+          "id": "r51",
+          "nummer": "51",
+          "tittel": "NM lag",
+          "punkt": [
+            "Innleiande kasting skal avviklast etter Gloppen-metoden (GM), avsluttande kasting etter utslagnings prinsippet, med visse tilpassningar.",
+            "Generelle bestemmelsar.\n\nBanene blir inndelt i seriar â 4 enkeltbaner. Seriane blir nummeret med 1, 2, 3 osv. Dermed kan kastnøklane for GM nyttast. Enkeltbanene innan kvar serie blir merka med A, B, C og D. Laga blir ved trekkning tildelt startnummer.\n\nKvart lag skal bestå av inntil 4 kastarar. Den enkelte klubb skal rangere disse som A, B, C og D. Denne rangeringa skal den enkelte kastar ha under heile konkurransen. (OBS unntak ved evt. omkamp). Kastar A kaster på bane A, kastar B kaster på bane B osv. Klubbane kan stille med fleire lag. Det er ikkje tillat for kastarar å bytte lag under konkurransen. Mixa lag kan delta (dvs. kastarar frå fleire klubbar dannar lag). Dei involverte klubbane skal godkjenne disse laga. Den enkelte klubb må prioritere «reine» klubblag. Kvart lag skal utnemne ein kaptein som er ansvarleg for føring av startkort og at kastarane på laget stiller på rett serie og bane i kvar kamp. Alle kampane blir avvikla etter prinsippa i regel 21 og 22. Dette gjeld både innleiande og avsluttande kasting.",
+            "Innleiande kasting\n\n2 eller 3 kastarar pr. enkeltbane. Lagmessig rangering som i regel 22.3 med tilpassing. Er kamppoenga (KP) og skårpoenga (SP) lagmessig like og bestemmelsane om innbyrdes oppgjør ikkje kan nyttast, går det laget føre som har høgast samla skår i enkeltrunde, er det også likt tel nestbeste osv. Er det framleis likt, tel høgast skår i enkeltkamp osv.",
+            "Avsluttande kasting.\n\n2 kastarar pr. enkeltbane:\n1. Det laget som lagmessig har flest KP går vidare til neste runde.\n2. Er KP like går det laget vidare som lagmessig har flest SP.\n3. Er det også likt, gjeld flest SP i enkeltkamp, vidare nestbeste osv.\n4. Er det framleis likt skal det kastast omkamp.\n\n3 kastarar pr. enkeltbane:\n5. Dei to laga som lagmessig har flest KP går vidare til neste runde.\n6. Er KP like går dei laga/det laget vidare som lagmessig har flest SP\n7. Som pkt. 3\n8. Som pkt. 4.\n\nBestemmelsane om finalekasting og rangering, regel 45.2 og 45.6 gjeld også for lagkamp (KP og SP lagmessig). Bestemmelsane om seeding og w.o., regel 11.9 og 12.4 kan nyttast (KP og SP lagmessig).",
+            "Omkamp.\n\nI omkampen skal kvart lag delta med tre kastarar. Det enkelte lag bestemmer kven det skal være, og rangerer disse som A, B og C. Utgangen i omkampar er 15 SP. Enkeltkampane må vinnast med 2 SP. Det laget som vinn to evt. alle tre enkeltkampane går vidare til neste runde."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kap6",
+      "tittel": "Kapittel 6. Avgifter/gebyr",
+      "reglar": [
+        {
+          "id": "r60",
+          "nummer": "60",
+          "tittel": "Avgifter",
+          "punkt": [
+            "For stemne arrangert av medlemsklubbar i NHF skal det betalast stemneavgift til NHF pr. påmeldt kastar. Det skal ikkje betalast stemneavgift for klasse 2 og juniorklassa og for lokale klubbkonkurransar, konkurransar i poengkasting, o.l. Avgifta vert fastsett av årsmøtet for dei komande 2 åra, og skal innbetalast til NHF sin kasserar innan 1 månad etter konkurransen.",
+            "Årsmøtet fastset startkontingent for dei komande 2 åra.",
+            "Årsmøtet fastset medlemskontingent for dei komande 2 åra. Innbetaling av årskontingent skal vere gjort innan 1.mai. Etter denne dato vert det lagt på eit purregebyr på kr. 100,00.",
+            "Årsmøtet fastset tilleggsavgifta i startkontingenten for NC-stemner for dei komande 2 åra. Avgifta skal innbetalast til NHF innan 1 månad etter konkurransen.",
+            "Årsmøtet fastset gebyr for etterpåmelding for dei komande 2 åra."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kap7",
+      "tittel": "Kapittel 7. Framferd/straff",
+      "reglar": [
+        {
+          "id": "r70",
+          "nummer": "70",
+          "tittel": "Framferd og straff",
+          "punkt": [
+            "Det er forbode å nyte alkohol eller andre rusmiddel på stemneområdet under ein hesteskokonkurranse.",
+            "Rusa personar, og elles andre som viser uhøvisk framferd kan visast bort frå stemneområdet.",
+            "Ved brot på gjeldande reglar kan deltakaren miste sine kamppoeng og skårpoeng.\n\nSkjer de fleire brot på gjeldane reglar kan juryen vise deltakaren bort frå bana.\n\nVil også gjelde dersom dette utøves etter at deltakaren er ferdig med sin kasting.",
+            "Juryen skal ved bevisst fusk diskvalifisere deltakaren frå konkurransen.\n\nDiskvalifisert deltakar skal visast bort frå bana.",
+            "Juryen skal rapportere til leiar av NHF om brudd på dette kapittel. Styret i NHF har fullmakt til å utøve ytterligere nødvendige sanksjoner, også på eget initiativ.",
+            "Juryens vedtak kan ankes til styret i NHF for endeleg avgjer. Sanksjoner gitt av styret kan ankes til lovutvalet for endeleg avgjer."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kap9",
+      "tittel": "Kapittel 9. Andre bestemmelsar.",
+      "reglar": [
+        {
+          "id": "r90",
+          "nummer": "90",
+          "tittel": "Handbok",
+          "punkt": [
+            "NHF skal gje ut ei handbok kvart år før sesongstart. Kvart medlemslag skal ha tilsendt eit eksemplar av handboka. Elles kan medlemsklubbane tinge det antal handbøker dei treng hjå NHF.",
+            "Handboka skal innehalde:\n1. Terminliste for sesongen. 2. Vedtektene for NHF.\n3. Konkurransereglement for NHF. 4. Medlemsliste.\n5. Adresseliste for valde tillitsmenn. 6. Avgifter, jfm. kakpittel 6.\n7. Materiell til sals.\n8. Liste over Norgemeistrar NC vinnarar og dei beste frå NM,NC og NR siste året.\n9. Aktuelt stoff frå siste årsmøte, og elles anna aktuelt stoff.\n9. Rekordar og Adelskalendar X-kast og Kongelag."
+          ]
+        },
+        {
+          "id": "r91",
+          "nummer": "91",
+          "tittel": "Terminliste",
+          "punkt": [
+            "Styret i NHF tildeler NM og NC stemner på grunnlag av innkomne søknader. Inntil vidare tildeler styret også distriktsmeisterskap etter søknad.",
+            "Styret i NHF set opp terminliste der alle stemne skal være med, men unntak av lokale klubbkonkurransar.",
+            "Søknad om NM og NC stemne skal sendast til NHF v/ leiaren innan den frist styret fastset. Innan same fristen må det også vere innsendt melding om andre stemne som skal inn i terminlista.",
+            "I søknaden/meldinga om stemne skal det takast med:\n1. Namn på arrangementet.\n2. Tid (dato og klokkeslett.)\n3. Stemnetype.\n4. Stad 5. Kontaktperson.",
+            "Fylgjande stemne skal arrangerast årleg:\n1. NC 2. NM-singel 3. NM-par 4. NM-mix-par 5. NM Hesteskogolf 6. NM X-kast, heilmatch. 7. NM lag. 8. NM Kongelag.\n\nAlle disse stemna er opne, bortsett frå NM, viser til regel 91.6\n\nNM kongelag avvikles som rein kongelagskasting (utan innleiande cup-runder eller X kast). Dersom to eller fleire deltakarar har lik bestepoengsum, skal beste enkelomgangresultat, osv, gå føre. Let det seg ikkje skilje vert det omkast.",
+            "Norgesmeisterskap er ope for kastar som:\n\nA: Er medlem av hesteskoklubb/gruppe som er tilslutta NHF, og dessutan har vore medlem av den aktuelle klubb/gruppe i minst 1 månad før NM, eller\n\nB: Er busett i Norge, og har vore det dei 3 siste månadene før NM.\n\nDersom NM singel også er teljande i Norgescupen gjeld ikkje punkta A og B.\n\nStyret, evt Juryen kan i spesielle tilfelle, også gje kastarar som ikkje stettar krava i punkta A og B løyve til å delta i Norgesmeisterskap.",
+            "Om det melder seg arrangørar skal det arr. distriktsmeisterskap både for par og singel.",
+            "Terminlista skal leggast fram på årsmøtet.",
+            "Terminlista skal vere utsendt til alle medlemsklubbane innan utgangen av mars. Klubbane skal sende terminlista til alle interesserte kastarar i klubben.",
+            "Terminlista skal innehalde:\n1. Kva slag arrangement. 2. Dato/dag.\n3. Stad 4. Arrangørklubb med adresse.\n5. Kontaktperson/adresse/telefon\n6. Postgiro eller bankgironummer til arrangøren.\n7. Leiaren av juryen"
+          ]
+        },
+        {
+          "id": "r92",
+          "nummer": "92",
+          "tittel": "Innbyding/påmelding",
+          "punkt": [
+            "Innbyding skal sendast skriftleg til alle lag i medlemslista. I innbydinga skal ein nytte det korrekte namnet på arrangementet iflg. terminlista.",
+            "Dessutan skal det i innbydinga informerast om:\n1. Stemnetype og avviklingsmetode.\n2. Når og kvar konkurransen skal haldast.\n3. Siste frist for påmelding og adresse for påmelding. Påmeldingsfristen skal ikkje være tidlegare enn 14 dagar før konkurransen.\n4. Frist for henting av startkort.\n5. Reiserute, evt.kiosk på stemneplassen og overnattingsmulegheter.\n6. Evt. avvik frå regelverket (sjå kapittel 4.1)",
+            "Laga står for påmelding av deltakarar til stemner, og står også ansvarleg for at startkontingenten til dei som er påmelde vert betalt. Startkontingenten skal betalast sjølv om påmelde deltakarar ikkje møter til start.",
+            "Einskildpersonar som melder seg på til stemne skal betale startkontingenten ved påmelding. Einskildpersonar skal ikkje registrerast som deltakar før startkontingenten er betalt.",
+            "Ved påmelding etter påmeldingsfristen, kan arrangøren pålegge dei etterpåmelde eit ekstragebyr pr. deltakar.",
+            "Laga er ansvarlege for at deira medlemer blir påmelde i rett klasse."
+          ]
+        },
+        {
+          "id": "r93",
+          "nummer": "93",
+          "tittel": "Stemneinformasjon",
+          "tekst": "Ved alle stemner skal det informerast på best mogeleg måte om følgjande:\n\n1. Namnet på dei viktigaste funksjonærane og namnet på jurymedlemene.\n\n2. Startliste med namn, klubb og startnummer for kvar deltakar og evt. pulje og serienummer.\n\n3. Kastnøklar\n\n4. Så snart som mogeleg etter stemneslutt, og evt. protestar er handsama, skal offisielle resultat kunngjerast.\n\n5. Resultalistene skal sendast NHF sin web-ansvarlege, evt. NC-koordinator, og aktuelle media så snart råd er. Web-ansvarlege skal legge resultatlistene ut på NHF sine heimesider.\n\n6. Resultatlistene skal innehalde følgjande:\nA. Namnet på arrangementet\nB. Stemnetype og avviklingsmetode\nC. Namn på jurymedlemene\nD. Stad, dato og arrangør\nE. Antal påmelde og antal startande deltakarar.\nF. Premiering, totalt og i kvar gruppe\nG. Namn, klubb og plassering på alle som deltok."
+        },
+        {
+          "id": "r94",
+          "nummer": "94",
+          "tittel": "Premiering",
+          "punkt": [
+            "I NM- og NC stemner skal ca 1/3 av deltakarane premierast.",
+            "All premiering i terminfesta stemner bør merkast med: stemne og plassering.",
+            "Premieringa i gruppa A skal være betre enn i gruppe B.",
+            "Det skal delast ut medaljar til dei tre beste i NC-sluttsamandraget. Styret bestemmer elles kor mange som skal premierast i sluttsamandraga, og syter også for premieringa."
+          ]
+        },
+        {
+          "id": "r96",
+          "nummer": "96",
+          "tittel": "Avlyste/avbrotne stemner",
+          "punkt": [
+            "Skjer avlysinga før stemnet har teke til skal det om mogeleg arrangerast på nytt så snart som råd er, evt. med ny arrangør. Den opprinnelege arrangør har rett å halde tilbake inntil kr. 5.- av startkontingenten pr. påmeldt deltakar til dekning av sine utgifter.",
+            "Må stemnet avlysast av grunnar som berre skuldast arrangøren skal all innbetalt startkontingent tilbakebetalast.",
+            "Blir stemnet avbrote etter at kastinga har teke til, men mindre enn halvparten av antal kastrunden, inkl. cupkastinga, er avvikla, gjeld det same som under regel 96.1",
+            "Blir stemnet avbrote etter at minst halvparten av antal kastrundar, inkl. avsl.kasting, er avvikla er stemnet teljande. Resultatlista skal settast opp på grunnlag av avvikla kasting, basert på kamppoeng og eigenskår.",
+            "Avgjerd om eit stemne skal avlysast/avbrytast skal takast av juryen.",
+            "Dersom ein kastar trekker seg under innleiande kasting får alle som han har møtt og skal møte w.o. Kastaren som trekker seg blir uplassert i stemnet. Har kastaren fullført innleiande kasting og så trekker seg, blir vedkomande rangert sist i den gruppa han ville ha blitt plassert i. Ingen andre kastar rykker opp på hans plass i den avsluttande kastinga.",
+            "Trekker ein kastar seg der heile konkurransen blir avvikla etter såkalla \"andre kastmetodar\" må vedkomande ha fullført minimum halvparten av kastrundene får å bli rangert i stemnet."
+          ]
+        },
+        {
+          "id": "r99",
+          "nummer": "99",
+          "tittel": "Rekordar/adelskalendar",
+          "punkt": [
+            "Det skal noterast nasjonale rekordar i Kongelagskasting og X-kast (både heilmatch, halvmatch og minimatch).",
+            "Det skal førast adelskalendar i Kongelagskasting og X-kast (både heilmatch, halvmatch og minimatch). Adelskalendaren skal årleg ajourførast.",
+            "Kongelag: Poeng oppnådd under innleiande kasting skal ikkje telje med.",
+            "Stemne: For at resultat skal bli godkjent som rekord eller bli oppført i Adelskalendaren må stemnet være oppført på den offisielle terminlista til NHF.\n\nResultat frå andre stemne kan også godkjennast, men då må arrangøren på førehand melde frå om stemnet til NHF seinast dagen før stemnet. Det må dessutan være minst 6 deltakarar som deltek."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kap10",
+      "tittel": "Kapittel 10. Diverse vedtak.",
+      "reglar": [
+        {
+          "id": "r100",
+          "nummer": "100",
+          "tittel": "Reisefordeling",
+          "merknad": "Vedteke av leiarmøte i Innvik 26.8.95 etter fullmakt frå årsmøtet '95. Seinare tillegg vedteke på årsmøtet '96. Seinare endringar vedteke på årsmøtet 2011",
+          "punkt": [
+            "100.1: Til årsmøta i NHF skal det nyttast reisefordeling pr. frammøtt representant med stemmerett frå medlemsklubbane. Styret skal godkjenne, evt. korrigere, reiserekningane frå medlemsklubane. Reiserekningane må være styret v/ kasserar i hende seinast 14 dagar etter årsmøtet. Utbetaling til klubbane skal skje seinast ein månad etter årsmøtet.",
+            "100.2: Styret kan redusere evt. avvise reiserekningar som er urimeleg store. Styret sine avgjerder er endelege. Ved bruk av privatbil er forutsetninga at ein klubb med rett til 2 eller fleire representantar reiser i ein bil. Vidare bør to eller fleire klubbar reise saman der dette er praktiske mogeleg. Fly kan nyttast der andre reisealternativ tek uforholdsmessig lang tid.",
+            "100.3 Satsar for reisefordelinga:\n1. Faktiske reiseutgifter skal leggast til grunn.\n2. Ved bruk av privatbil fastset styret for kvart årsmøte kva km-sats som skal nyttast, samt tillegg pr. km pr. passasjer\n3. Reisetidskompensasjon. Dvs. tillegg til faktiske reiseutgifter etter total reisetid (tur/retur) pr. representant:\n3 - 5 timar kr. 200,-\n5 - 7 timar kr. 300,-\n7 - 10 timar kr. 400,-\n10 - 13 timar kr. 500,-\nover 13 timar kr. 600,-",
+            "100.4 Reisefordelingsfond: Alle medlemsklubbar skal årleg betale til eit reisefordelingsfond eit tilskot på grunnkontingenten for kvar representant dei har rett til å ha på årsmøtet, jmf. vedtektene § 4 (dvs. same sum som medlemskontingenten). Innbetalingane til reisefordelingsfondet skal fordelast på det påfølgande årsmøtet. Styret bestemmer om og når evt. overskot på reisefordelingsfondet skal inntektsførast av NHF.",
+            "100.5: Styret bestemmer om opphaldsutgifter i samband med årsmøtet, heilt eller delvis, skal dekkast av reisefordelingsfondet."
+          ]
+        },
+        {
+          "id": "r101",
+          "nummer": "101",
+          "tittel": "Æresmedlem",
+          "merknad": "vedteke på årsmøte 2007",
+          "tekst": "Styret i Norges Hesteskokasterforbund (NHF) kan utnemnde æresmedlemer i NHF. Den som blir utnemnd som æresmedlem må være/eller har vore medlem av hesteskoklubb/gruppe som er tilslutta NHF.\n\nFor å kunne bli utnemnd til æresmedlem må vedkomande gjennom fleire år ha lagt ned eit stort og verdifullt arbeid til beste for hesteskosporten.\n\nAktive kastarar som gjennom mange år har utmerka seg med gode idrettslege presentasjonar kan og utnemnast til æresmedlem i NHF.\n\nÆresmedlem i NHF skal tildelast forbundet sitt æresdiplom.\n\nÆresmedlem i NHF kan delta på alle NM utan å betale startkontingent eller andre avgifter.\n\nÆresmedlem i NHF kan på NHF si rekning delta på årsmøta og årsmøtemiddagar i NHF. Reise og opphald blir ikkje dekka av NHF\n\nUtnemning av æresmedlem bør skje på årsmøtet i NHF, eller på andre festlege tilstellingar.\n\nI tillegg til styremedlemene kan alle hesteskoklubbar/grupper tilslutta NHF føreslå nye æresmedlemer. Forslaga skal være skriftlege og grunngjevne og må være kome styret i hende seinast 2 - to - månader før tildelinga skal skje."
+        },
+        {
+          "id": "r102",
+          "nummer": "102",
+          "tittel": "Fullmakt til lovutvalet",
+          "merknad": "vedteke på årsmøtet 2007",
+          "tekst": "Lovutvalet kan gjere kosmetiske endringar i lover og regler, ut i frå vedtak på årsmøter og styremøter.\n\nDette vedtaket betyr at lovutvalet kan gjere endringar i teksten i vedtektene og regelverket på ein slik måte at det ikkje endrar på innhaldet/meininga med paragrafen elle regelen."
+        },
+        {
+          "id": "r103",
+          "nummer": "103",
+          "tittel": "NM X-kast – eige arrangement",
+          "merknad": "vedteke på årsmøtet 2011",
+          "tekst": "NM X-kast skal arrangerast som ein eigen konkurranse/arrangement. Dvs. det skal ikkje gå inn som innleiande kasting til NM single eller i eit NC eller anna stemne,"
+        },
+        {
+          "id": "r104",
+          "nummer": "104",
+          "tittel": "Endring av regelverket",
+          "merknad": "vedteke på årsmøtet 2023",
+          "tekst": "Endringar av regelverket kan berre skje på ordinært årsmøte eller leiarmøte. Det krevst vanleg fleirtal av dei røysteføre på årsmøtet."
+        }
+      ]
+    }
+  ]
+}
