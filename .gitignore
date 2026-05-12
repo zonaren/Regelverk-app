@@ -3,3 +3,5 @@ reglar-ai.json
 reglar2026-original.json
 Reglar.docx
 .vscode/settings.json
+dist/
+node_modules/

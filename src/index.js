@@ -1,3 +1,5 @@
+import { STORAGE_KEY, fieldsToBody, closeSidebarIfMobile } from './utils/general.js';
+
 function buildRuleBody(r) {
   if (r.body) return r.body; // gammalt format, bruk som det er
   return fieldsToBody({ tekst: r.tekst, punkt: r.punkt, merknad: r.merknad }) || '<p>–</p>';

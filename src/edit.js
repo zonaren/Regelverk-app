@@ -1,3 +1,5 @@
+import { STORAGE_KEY, fieldsToBody, closeSidebarIfMobile } from './utils/general.js';
+
 // ── Body field converters ────────────────────────────────────────────────────
 function parseBodyToFields(html) {
   const tmp = document.createElement('div');

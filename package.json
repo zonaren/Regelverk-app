@@ -1,0 +1,13 @@
+{
+  "name": "nhf-regler",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:dev-env": "vite build --mode dev-env",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
