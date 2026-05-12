@@ -1,4 +1,5 @@
 import { STORAGE_KEY, fieldsToBody, closeSidebarIfMobile } from './utils/general.js';
+import rawRules from './reglar.json';
 
 function buildRuleBody(r) {
   if (r.body) return r.body; // gammalt format, bruk som det er
@@ -23,23 +24,7 @@ function normalizeRules(raw) {
 }
 
 async function init() {
-  let RULES = null;
-
-  // 1. Hent alltid gjeldande data frå json-fila
-  try {
-    const resp = await fetch('./reglar.json');
-    if (resp.ok) {
-      const raw = await resp.json();
-      RULES = normalizeRules(raw);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(RULES));
-    }
-  } catch(e) {}
-
-  // 2. Fallback til localStorage viss henting feila (t.d. offline)
-  if (!RULES) {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) { try { RULES = JSON.parse(stored); } catch(e) {} }
-  }
+  let RULES = normalizeRules(rawRules);
 
   // 3. Ingen data funne
   if (!RULES || !RULES.length) {

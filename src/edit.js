@@ -1,4 +1,5 @@
 import { STORAGE_KEY, fieldsToBody, closeSidebarIfMobile } from './utils/general.js';
+import defaultRules from './reglar.json';
 
 // ── Body field converters ────────────────────────────────────────────────────
 function parseBodyToFields(html) {
@@ -539,17 +540,9 @@ async function initData() {
     renderAll();
     return;
   }
-  // Try to load reglar.json from same folder
-  try {
-    const resp = await fetch('./reglar.json');
-    if (resp.ok) {
-      rules = await resp.json();
-      saveData(rules);
-      renderAll();
-      showToast('Lasta reglar frå reglar.json');
-      return;
-    }
-  } catch (e) {}
+  rules = defaultRules;
+  saveData(rules);
+  renderAll();
   // No data at all
   renderAll();
   showToast('Ingen data – opne ein JSON-fil for å starte');
