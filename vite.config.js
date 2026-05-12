@@ -3,7 +3,7 @@ import { resolve } from 'path'
 
 export default defineConfig(({ mode }) => ({
   root: 'src',
-  base: mode === 'dev-env' ? '/nhf-regler/dev/' : '/nhf-regler/',
+  base: mode === 'dev-env' ? '/dev/' : '/',
   build: {
     outDir: '../dist',
     emptyOutDir: true,
